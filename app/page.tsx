@@ -4,6 +4,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import StatsSection from './components/StatsSection';
+import PartnerAgenciesSection from './components/PartnerAgenciesSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import ProjectsSection from './components/ProjectsSection';
@@ -20,7 +21,9 @@ export default function HomePage() {
         <HeroSection />
         <FeaturesSection />
         <AboutSection />
+        <PartnerAgenciesSection />
         <StatsSection />
+       
         <ServicesSection />
         <ProjectsSection />
         <GuidanceSection />

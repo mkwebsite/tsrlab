@@ -54,7 +54,7 @@ export default function Header() {
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#ff3333] transition-colors">
                 <LinkedInIcon className="w-3.5 h-3" style={{ color: 'currentColor' }} />
               </a>
               <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">
@@ -100,7 +100,17 @@ export default function Header() {
                   : 'text-[#4b5563] hover:text-[#ff3333]'
               }`}
             >
-              RESEARCH SERVICES
+              RESEARCH & ADVISORY
+            </a>
+            <a 
+              href="/digital-ai" 
+              className={`text-sm font-medium transition-colors ${
+                pathname === '/digital-ai' 
+                  ? 'text-[#ff3333]' 
+                  : 'text-[#4b5563] hover:text-[#ff3333]'
+              }`}
+            >
+              DIGITAL & AI
             </a>
             <a 
               href="/tsr-insights" 
@@ -192,7 +202,17 @@ export default function Header() {
                 : 'text-[#4b5563] hover:text-[#ff3333]'
             }`}
           >
-            RESEARCH SERVICES
+            RESEARCH & ADVISORY
+          </a>
+          <a
+            href="/digital-ai"
+            className={`py-3 text-base font-medium transition-colors border-b border-gray-100 ${
+              pathname === '/digital-ai' 
+                ? 'text-[#ff3333]' 
+                : 'text-[#4b5563] hover:text-[#ff3333]'
+            }`}
+          >
+            DIGITAL & AI
           </a>
           <a
             href="/tsr-insights"
@@ -221,7 +241,7 @@ export default function Header() {
         {/* Social Links in Drawer */}
         <div className="px-6 py-4 border-t border-gray-100">
           <div className="flex items-center gap-4">
-            <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">
+            <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#ff3333] transition-colors">
               <LinkedInIcon className="w-5 h-4" style={{ color: 'currentColor' }} />
             </a>
             <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">

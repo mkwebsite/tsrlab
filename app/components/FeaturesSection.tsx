@@ -10,24 +10,29 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 const features = [
   {
     icon: ChipIcon,
-    title: 'AI x Research Training',
-    description: 'We run AI × Research bootcamps for market researchers, research institutions, and policy teams, covering methodologies, data collection, and GenAI-enabled research workflows.',
+    title: 'Research Services',
+    description: 'We conduct qualitative and quantitative research to obtain data and insights from target groups, delivering research reports that help organizations make informed, evidence-based decisions.',
+    items: ['Market research', 'Policy and Economic research', 'Feasibility Due Diligence', 'Consumer Insights'],
   },
   {
     icon: SearchIcon,
-    title: 'Market Research',
-    description: 'We conduct market research to understand industry trends, customer behavior, and competitive landscape for strategic decision-making.',
-  },
-  {
-    icon: ChartLineIcon,
-    title: 'Policy & Economic Research',
-    description: 'We support public sector organizations with policy research, economic analysis, and impact assessments to drive informed policy decisions.',
+    title: 'AI Advisory & Workflows',
+    description: 'We help organizations define AI strategies and deploy practical AI workflows tailored to their specific needs.',
+    items: ['AI strategy', 'Use-case design', 'Workflow automation', 'Decision intelligence'],
   },
   {
     icon: BriefcaseIcon,
     title: 'Executive Advisory',
-    description: 'We provide executive advisory services to support leadership with strategic insights, governance frameworks, and data-driven guidance.',
+    description: 'We support leaders and corporate strategy teams with decision-ready intelligence, strategic analysis, and governance-focused advisory support.',
+    items: ['Executive briefs', 'Strategic insights', 'Competitive Benchmarking', 'Thought leadership'],
   },
+  {
+    icon: ChartLineIcon,
+    title: 'Digital Solutions',
+    description: 'We partner with founders and SMBs to translate insights into execution—designing and building digital products, platforms, and tools that drive efficiency and growth.',
+    items: ['Website and App development', 'Workflow digitization', 'Custom platforms', 'System integration'],
+  },
+ 
 ];
 
 export default function FeaturesSection() {
@@ -42,7 +47,7 @@ export default function FeaturesSection() {
             Our Main Features
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-[#4b5563] max-w-3xl mx-auto px-4">
-            Explore our range of data, research services and public sector consulting services to help your organization grow.
+            Explore our range of research, advisory and AI-native digital solution services to help your organization grow.
           </p>
         </div>
 
@@ -67,6 +72,16 @@ export default function FeaturesSection() {
                   <p className="text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
                     {feature.description}
                   </p>
+                  {feature.items && (
+                    <ul className="space-y-2 mt-4">
+                      {feature.items.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-xs md:text-sm text-[#4b5563]">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#ff3333] flex-shrink-0"></span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             );

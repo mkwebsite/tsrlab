@@ -25,7 +25,7 @@ export default function Footer() {
               A specialist boutique firm providing research, analytics, and public policy consulting to support strategic decision-making for SMEs and large enterprises
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">
                 <LinkedInIcon className="w-3.5 h-3.5" style={{ color: 'currentColor' }} />
               </a>
               <a href="#" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">

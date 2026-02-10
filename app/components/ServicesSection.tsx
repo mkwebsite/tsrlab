@@ -73,7 +73,7 @@ export default function ServicesSection() {
             Ways We Help Clients
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-[#4b5563] max-w-3xl mx-auto px-4">
-            Explore our range of data, research services and public sector consulting services.
+            Explore our range of research, advisory and AI-native digital solution services.
           </p>
         </div>
 

@@ -20,12 +20,20 @@ const slides = [
     title: 'Intelligence Meets',
     highlight: 'Clarity',
     titleEnd: 'at TSR Lab',
-    description: 'Explore our range of data, government advisory, and market research services',
+    description: 'Explore our range of market research, advisory, and digital solution services',
     image: '/images/about/business-team.jpg',
     imageAlt: 'Business team collaboration',
   },
-];
-
+  {
+    badge: 'TSR Lab',
+    title: 'Digital Transformation &',
+    highlight: 'AI Workflows',
+    titleEnd: '',
+    description: 'Turning Insight into Execution',
+    image: '/images/DigitalTransformation.jpg',
+    imageAlt: 'Business team collaboration',
+  },
+]; 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
