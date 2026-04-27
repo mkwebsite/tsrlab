@@ -14,6 +14,7 @@ const slides = [
     description: 'Insight That Keeps Your Organization Ahead',
     image: '/images/2151003701.jpg',
     imageAlt: 'Red circuit board with binary code and glowing connections',
+    servicesHref: '/research-services',
   },
   {
     badge: 'TSR Lab',
@@ -23,6 +24,7 @@ const slides = [
     description: 'Explore our range of market research, advisory, and digital solution services',
     image: '/images/about/business-team.jpg',
     imageAlt: 'Business team collaboration',
+    servicesHref: '/research-services',
   },
   {
     badge: 'TSR Lab',
@@ -32,8 +34,10 @@ const slides = [
     description: 'Turning Insight into Execution',
     image: '/images/DigitalTransformation.jpg',
     imageAlt: 'Business team collaboration',
+    servicesHref: '/digital-ai',
   },
-]; 
+];
+
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -116,7 +120,10 @@ export default function HeroSection() {
                     <a href="/contact">
                       <Button variant="primary">Get in Touch</Button>
                     </a>
-                    <a href="/research-services" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 bg-transparent text-[#1f2937] border-2 border-[#1f2937] hover:text-[#ff3333] hover:border-[#ff3333] hover:scale-105 w-full sm:w-auto">
+                    <a
+                      href={slide.servicesHref}
+                      className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 bg-transparent text-[#1f2937] border-2 border-[#1f2937] hover:text-[#ff3333] hover:border-[#ff3333] hover:scale-105 w-full sm:w-auto"
+                    >
                       Explore Services
                     </a>
                   </div>

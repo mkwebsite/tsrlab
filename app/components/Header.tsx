@@ -6,11 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
 import EmailIcon from './icons/email.svg';
-import PhoneIcon from './icons/phone.svg';
 import ArrowRightIcon from './icons/arrow-right.svg';
 import LinkedInIcon from './icons/linkedin.svg';
 import TwitterIcon from './icons/twitter.svg';
-import FacebookIcon from './icons/facebook.svg';
 
 export default function Header() {
   const pathname = usePathname();
@@ -40,28 +38,34 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center gap-6">
-              <a href="mailto:anupam@tsrlab.com" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a href="mailto:hello@tsrlab.com" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
                 <EmailIcon className="w-3 h-2.5" style={{ color: '#ff3333' }} />
-                <span>anupam@tsrlab.com</span>
+                <span>hello@tsrlab.com</span>
               </a>
               <a href="tel:+971585912084" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
-                <PhoneIcon className="w-3 h-3" style={{ color: '#ff3333' }} />
-                <span>UAE: +971 58 591 2084</span>
+                <span className="text-sm leading-none shrink-0" title="United Arab Emirates" aria-hidden>
+                  🇦🇪
+                </span>
+                <span>+971 58 591 2084</span>
               </a>
-              <a href="tel:+918967392671" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
-                <PhoneIcon className="w-3 h-3" style={{ color: '#ff3333' }} />
-                <span> India +91 8967392671</span>
+              <a href="tel:+918144990728" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+                <span className="text-sm leading-none shrink-0" title="India" aria-hidden>
+                  🇮🇳
+                </span>
+                <span>+91 8144990728</span>
               </a>
             </div>
             <div className="flex items-center gap-3">
               <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#ff3333] transition-colors">
                 <LinkedInIcon className="w-3.5 h-3" style={{ color: 'currentColor' }} />
               </a>
-              <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a
+                href="https://x.com/TSRLab1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#374151] hover:text-[#ff3333] transition-colors"
+              >
                 <TwitterIcon className="w-4 h-3.5" style={{ color: 'currentColor' }} />
-              </a>
-              <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">
-                <FacebookIcon className="w-2.5 h-4" style={{ color: 'currentColor' }} />
               </a>
             </div>
           </div>
@@ -228,13 +232,21 @@ export default function Header() {
 
         {/* Contact Info in Drawer */}
         <div className="px-6 py-4 space-y-3 border-t border-gray-100">
-          <a href="mailto:anupam@tsrlab.com" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+          <a href="mailto:hello@tsrlab.com" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
             <EmailIcon className="w-4 h-3" style={{ color: '#ff3333' }} />
-            <span>anupam@tsrlab.com</span>
+            <span>hello@tsrlab.com</span>
           </a>
           <a href="tel:+971585912084" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
-            <PhoneIcon className="w-4 h-4" style={{ color: '#ff3333' }} />
+            <span className="text-lg leading-none shrink-0" title="United Arab Emirates" aria-hidden>
+              🇦🇪
+            </span>
             <span>+971 58 591 2084</span>
+          </a>
+          <a href="tel:+918144990728" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+            <span className="text-lg leading-none shrink-0" title="India" aria-hidden>
+              🇮🇳
+            </span>
+            <span>+91 8144990728</span>
           </a>
         </div>
 
@@ -244,11 +256,13 @@ export default function Header() {
             <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#ff3333] transition-colors">
               <LinkedInIcon className="w-5 h-4" style={{ color: 'currentColor' }} />
             </a>
-            <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">
+            <a
+              href="https://x.com/TSRLab1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#374151] hover:text-[#ff3333] transition-colors"
+            >
               <TwitterIcon className="w-5 h-4" style={{ color: 'currentColor' }} />
-            </a>
-            <a href="#" className="text-[#374151] hover:text-[#ff3333] transition-colors">
-              <FacebookIcon className="w-4 h-5" style={{ color: 'currentColor' }} />
             </a>
           </div>
         </div>

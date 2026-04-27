@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     const smtpUser = process.env.SMTP_USER;
     const smtpPassword = process.env.SMTP_PASSWORD;
     const smtpFrom = process.env.SMTP_FROM || smtpUser;
-    const smtpTo = process.env.SMTP_TO || 'anupam@tsrlab.com';
+    const smtpTo = process.env.SMTP_TO || 'hello@tsrlab.com';
 
     if (!smtpUser || !smtpPassword) {
       console.error('SMTP credentials not configured');

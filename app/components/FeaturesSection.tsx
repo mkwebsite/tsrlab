@@ -1,38 +1,62 @@
 'use client';
 
 import React from 'react';
+import UsersChartIcon from './icons/users-chart.svg';
+import UserExpertIcon from './icons/user-expert.svg';
 import ChipIcon from './icons/chip.svg';
-import SearchIcon from './icons/search.svg';
-import ChartLineIcon from './icons/chart-line.svg';
-import BriefcaseIcon from './icons/briefcase.svg';
+import DesktopIcon from './icons/desktop.svg';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const features = [
   {
+    icon: UsersChartIcon,
+    title: 'Strategic Research & Market Intelligence',
+    description:
+      'We conduct rigorous market research, industry analysis, and competitive intelligence using qualitative and quantitative methods to generate decision-ready insights across industries, markets, and policy environments.',
+    items: [
+      'Market Research and Industry Analysis',
+      'Competitive Intelligence and Benchmarking',
+      'Policy and Economic Research',
+      'Feasibility Studies and Commercial Due Diligence',
+      'Consumer and Stakeholder Insights',
+    ],
+  },
+  {
+    icon: UserExpertIcon,
+    title: 'Strategic Advisory & Executive Insights',
+    description:
+      'We support leadership teams with strategic analysis, executive advisory, and decision support to improve planning, competitive positioning, and growth strategy.',
+    items: [
+      'Executive Briefs and Strategy Reports',
+      'Strategic diagnostics and scenario planning',
+      'Competitive benchmarking and market intelligence',
+      'Thought leadership and research publications',
+    ],
+  },
+  {
     icon: ChipIcon,
-    title: 'Research Services',
-    description: 'We conduct qualitative and quantitative research to obtain data and insights from target groups, delivering research reports that help organizations make informed, evidence-based decisions.',
-    items: ['Market research', 'Policy and Economic research', 'Feasibility Due Diligence', 'Consumer Insights'],
+    title: 'AI Consulting & Workflow Automation',
+    description:
+      'We help organizations adopt AI-native tools, workflow automation, and applied AI solutions to improve research productivity, analytics capabilities, and decision-making.',
+    items: [
+      'AI Strategy and Advisory',
+      'AI Use-Case Design and Implementation',
+      'Workflow Automation and AI agents',
+      'AI-enabled Research and Analytics Workflows',
+    ],
   },
   {
-    icon: SearchIcon,
-    title: 'AI Advisory & Workflows',
-    description: 'We help organizations define AI strategies and deploy practical AI workflows tailored to their specific needs.',
-    items: ['AI strategy', 'Use-case design', 'Workflow automation', 'Decision intelligence'],
+    icon: DesktopIcon,
+    title: 'Digital Products & Transformation',
+    description:
+      'We turn insights into execution by building digital platforms, custom applications, analytics tools, and workflow systems that improve operational efficiency and business decision-making.',
+    items: [
+      'Website and Application Development',
+      'Workflow Digitization and Automation',
+      'Custom Digital Platforms and Internal Tools',
+      'System Integration and Data Solutions',
+    ],
   },
-  {
-    icon: BriefcaseIcon,
-    title: 'Executive Advisory',
-    description: 'We support leaders and corporate strategy teams with decision-ready intelligence, strategic analysis, and governance-focused advisory support.',
-    items: ['Executive briefs', 'Strategic insights', 'Competitive Benchmarking', 'Thought leadership'],
-  },
-  {
-    icon: ChartLineIcon,
-    title: 'Digital Solutions',
-    description: 'We partner with founders and SMBs to translate insights into execution—designing and building digital products, platforms, and tools that drive efficiency and growth.',
-    items: ['Website and App development', 'Workflow digitization', 'Custom platforms', 'System integration'],
-  },
- 
 ];
 
 export default function FeaturesSection() {
@@ -44,7 +68,7 @@ export default function FeaturesSection() {
         {/* Header */}
         <div className={`text-center space-y-4 md:space-y-5 mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e2345]">
-            Our Main Features
+            What We Do
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-[#4b5563] max-w-3xl mx-auto px-4">
             Explore our range of research, advisory and AI-native digital solution services to help your organization grow.

@@ -17,7 +17,7 @@ SMTP_PASSWORD=your-app-password
 
 # Email Addresses
 SMTP_FROM=your-email@gmail.com
-SMTP_TO=anupam@tsrlab.com
+SMTP_TO=hello@tsrlab.com
 
 # Auto-reply to users (optional - set to 'true' to enable)
 SMTP_SEND_AUTO_REPLY=false
@@ -32,7 +32,7 @@ SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASSWORD=your-app-password  # Use App Password, not regular password
 SMTP_FROM=your-email@gmail.com
-SMTP_TO=anupam@tsrlab.com
+SMTP_TO=hello@tsrlab.com
 ```
 
 **Note:** For Gmail, you need to:
@@ -46,7 +46,7 @@ SMTP_PORT=587
 SMTP_USER=your-email@outlook.com
 SMTP_PASSWORD=your-password
 SMTP_FROM=your-email@outlook.com
-SMTP_TO=anupam@tsrlab.com
+SMTP_TO=hello@tsrlab.com
 ```
 
 ### Yahoo
@@ -56,7 +56,7 @@ SMTP_PORT=587
 SMTP_USER=your-email@yahoo.com
 SMTP_PASSWORD=your-app-password
 SMTP_FROM=your-email@yahoo.com
-SMTP_TO=anupam@tsrlab.com
+SMTP_TO=hello@tsrlab.com
 ```
 
 ### Custom SMTP Server
@@ -66,7 +66,7 @@ SMTP_PORT=587  # or 465 for SSL
 SMTP_USER=your-email@your-domain.com
 SMTP_PASSWORD=your-password
 SMTP_FROM=your-email@your-domain.com
-SMTP_TO=anupam@tsrlab.com
+SMTP_TO=hello@tsrlab.com
 ```
 
 ## Environment Variables Explained

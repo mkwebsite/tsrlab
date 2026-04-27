@@ -17,8 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'TSR Lab - Market Research and Policy Advisory',
-  description: 'We are a specialist boutique firm providing research, analytics, and public policy consulting to support strategic decision-making for SMEs, large enterprises, and government sector.',
+  title: 'TSR Lab - Research, Strategy & AI Enabled Digital Transformation',
+  description:
+    'TSR Lab is a specialist consulting firm with a portfolio spanning strategic advisory, market research, advanced analytics, digital solutions, and AI-native automation. We deliver decision-ready intelligence and AI solutions - helping organizations move faster, operate smarter, and build sustainable competitive advantage.',
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },

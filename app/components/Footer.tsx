@@ -2,9 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import LinkedInIcon from './icons/linkedin.svg';
 import TwitterIcon from './icons/twitter.svg';
-import FacebookIcon from './icons/facebook.svg';
 import LocationIcon from './icons/location.svg';
-import PhoneFooterIcon from './icons/phone-footer.svg';
 import EmailFooterIcon from './icons/email-footer.svg';
 
 export default function Footer() {
@@ -21,18 +19,27 @@ export default function Footer() {
               height={50}
               className="h-12 w-auto"
             />
-            <p className="text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
-              A specialist boutique firm providing research, analytics, and public policy consulting to support strategic decision-making for SMEs and large enterprises
-            </p>
+            <div className="space-y-3 text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
+              <p>
+                TSR Lab is a specialist consulting firm with a portfolio spanning strategic advisory,
+                market research, advanced analytics, digital solutions, and AI-native automation.
+              </p>
+              <p>
+                We deliver decision-ready intelligence and AI solutions - helping organizations move
+                faster, operate smarter, and build sustainable competitive advantage.
+              </p>
+            </div>
             <div className="flex items-center gap-3">
               <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">
                 <LinkedInIcon className="w-3.5 h-3.5" style={{ color: 'currentColor' }} />
               </a>
-              <a href="#" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a
+                href="https://x.com/TSRLab1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors"
+              >
                 <TwitterIcon className="w-4 h-3.5" style={{ color: 'currentColor' }} />
-              </a>
-              <a href="#" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">
-                <FacebookIcon className="w-2.5 h-4" style={{ color: 'currentColor' }} />
               </a>
             </div>
           </div>
@@ -131,23 +138,25 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-2 md:gap-3">
-                <PhoneFooterIcon className="w-3.5 h-3.5 shrink-0" style={{ color: '#ff3333' }} />
+                <span className="text-base leading-none shrink-0" title="United Arab Emirates" aria-hidden>
+                  🇦🇪
+                </span>
                 <a href="tel:+971585912084" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
-                UAE +971 585912084
-               
+                  +971 58 591 2084
                 </a>
               </li>
               <li className="flex items-center gap-2 md:gap-3">
-                <PhoneFooterIcon className="w-3.5 h-3.5 shrink-0" style={{ color: '#ff3333' }} />
-                <a href="tel:+918967392671" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
-                India +91 8967392671
-               
+                <span className="text-base leading-none shrink-0" title="India" aria-hidden>
+                  🇮🇳
+                </span>
+                <a href="tel:+918144990728" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                  +91 8144990728
                 </a>
               </li>
               <li className="flex items-center gap-2 md:gap-3">
                 <EmailFooterIcon className="w-3.5 h-2.5 shrink-0" style={{ color: '#ff3333' }} />
-                <a href="mailto:anupam@tsrlab.com" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors break-all">
-                  anupam@tsrlab.com
+                <a href="mailto:hello@tsrlab.com" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors break-all">
+                  hello@tsrlab.com
                 </a>
               </li>
             </ul>

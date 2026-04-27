@@ -107,7 +107,26 @@ export default function ContactPage() {
                 <PhoneIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
               </div>
               <h3 className="text-lg font-bold text-[#111827] mb-3">Phone</h3>
-              <p className="text-[#6b7280] text-sm">+971 58 591 2084</p>
+              <div className="text-[#6b7280] text-sm space-y-2">
+                <a
+                  href="tel:+971585912084"
+                  className="flex items-center justify-center gap-2 hover:text-[#ff3333] transition-colors"
+                >
+                  <span className="text-base leading-none shrink-0" title="United Arab Emirates" aria-hidden>
+                    🇦🇪
+                  </span>
+                  <span>+971 58 591 2084</span>
+                </a>
+                <a
+                  href="tel:+918144990728"
+                  className="flex items-center justify-center gap-2 hover:text-[#ff3333] transition-colors"
+                >
+                  <span className="text-base leading-none shrink-0" title="India" aria-hidden>
+                    🇮🇳
+                  </span>
+                  <span>+91 8144990728</span>
+                </a>
+              </div>
             </div>
 
             {/* Email Card */}
@@ -116,7 +135,7 @@ export default function ContactPage() {
                 <EmailIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
               </div>
               <h3 className="text-lg font-bold text-[#111827] mb-3">Email</h3>
-              <p className="text-[#6b7280] text-sm">anupam@tsrlab.com</p>
+              <p className="text-[#6b7280] text-sm">hello@tsrlab.com</p>
             </div>
           </div>
         </div>
