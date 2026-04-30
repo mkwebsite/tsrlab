@@ -1,61 +1,149 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import CalendarIcon from '../icons/calendar-small.svg';
 import ArrowRightIcon from '../icons/arrow-right-article.svg';
 
+type InsightsCategory = {
+  _id: string;
+  name: string;
+  slug: string;
+};
+
+type InsightItem = {
+  _id: string;
+  slug: string;
+  title: string;
+  metaDescription?: string;
+  content: string;
+  featuredImage?: string;
+  insightCategorySlug?: string;
+  createdAt?: string;
+};
+
 export default function InsightsContent() {
-  const [activeCategory, setActiveCategory] = useState('All Insights');
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [categories, setCategories] = useState<InsightsCategory[]>([]);
+  const [insights, setInsights] = useState<InsightItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [subscriberEmail, setSubscriberEmail] = useState('');
+  const [subscribeMessage, setSubscribeMessage] = useState<string | null>(null);
+  const [subscribeError, setSubscribeError] = useState<string | null>(null);
+  const [isSubscribing, setIsSubscribing] = useState(false);
 
-  const categories = [
-    { name: 'All Insights', count: 24 },
-    { name: 'Technology', count: 8 },
-    { name: 'Strategy', count: 6 },
-    { name: 'Research', count: 5 },
-    { name: 'Finance', count: 3 },
-    { name: 'Innovation', count: 2 },
-  ];
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
 
-  const articles = [
-    {
-      slug: 'ai-integration-in-modern-workflow',
-      category: 'TECHNOLOGY',
-      image: '/images/insights/ai-integration.svg',
-      date: 'Mar 18, 2024',
-      readTime: '5 min read',
-      title: 'AI Integration in Modern Workflow',
-      description: 'Discover how artificial intelligence is reshaping daily operations and boosting productivity across sectors.',
-    },
-    {
-      slug: 'strategic-planning-for-q2-growth',
-      category: 'STRATEGY',
-      image: '/images/insights/strategic-planning.svg',
-      date: 'Mar 15, 2024',
-      readTime: '8 min read',
-      title: 'Strategic Planning for Q2 Growth',
-      description: 'Key strategies to align your team and resources for maximum impact in the upcoming quarter.',
-    },
-    {
-      slug: 'global-market-trends-2024',
-      category: 'RESEARCH',
-      image: '/images/insights/global-trends.svg',
-      date: 'Mar 12, 2024',
-      readTime: '12 min read',
-      title: 'Global Market Trends 2024',
-      description: 'An in-depth look at the shifting global markets and what they mean for international business.',
-    },
-    {
-      slug: 'optimizing-cash-flow',
-      category: 'FINANCE',
-      image: null,
-      date: 'Mar 10, 2024',
-      readTime: '6 min read',
-      title: 'Optimizing Cash Flow',
-      description: 'Practical tips for managing liquidity and ensuring financial stability in uncertain times.',
-    },
-  ];
+  const parseReadTime = (value: string) => {
+    const words = value.trim().split(/\s+/).length;
+    const minutes = Math.max(1, Math.ceil(words / 200));
+    return `${minutes} min read`;
+  };
+
+  const plainText = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const resolveImageUrl = (value?: string) => {
+    const raw = (value || '').trim();
+    if (!raw) return '';
+    if (/^https?:\/\//i.test(raw)) return raw;
+    if (!apiBase) return raw;
+    const base = apiBase.replace(/\/+$/, '');
+    const path = raw.startsWith('/') ? raw : `/${raw}`;
+    return `${base}${path}`;
+  };
+
+  useEffect(() => {
+    const load = async () => {
+      if (!apiBase) {
+        setError('API URL is not configured.');
+        setIsLoading(false);
+        return;
+      }
+      setIsLoading(true);
+      setError(null);
+      try {
+        const [categoriesResponse, insightsResponse] = await Promise.all([
+          fetch(`${apiBase}/app/insights-categories`, { cache: 'no-store' }),
+          fetch(`${apiBase}/app/cms/insights?page=1&limit=100`, { cache: 'no-store' }),
+        ]);
+
+        if (!categoriesResponse.ok) {
+          throw new Error('Failed to load categories');
+        }
+        if (!insightsResponse.ok) {
+          throw new Error('Failed to load insights');
+        }
+
+        const categoriesJson = await categoriesResponse.json();
+        const insightsJson = await insightsResponse.json();
+        const categoriesList = Array.isArray(categoriesJson)
+          ? categoriesJson
+          : Array.isArray(categoriesJson?.data)
+            ? categoriesJson.data
+            : Array.isArray(categoriesJson?.data?.data)
+              ? categoriesJson.data.data
+              : [];
+        const insightsList = Array.isArray(insightsJson?.data)
+          ? insightsJson.data
+          : Array.isArray(insightsJson?.data?.data)
+            ? insightsJson.data.data
+            : Array.isArray(insightsJson)
+              ? insightsJson
+              : [];
+        setCategories(categoriesList);
+        setInsights(insightsList);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load insights');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    load();
+  }, [apiBase]);
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const item of insights) {
+      const key = item.insightCategorySlug || 'uncategorized';
+      counts[key] = (counts[key] || 0) + 1;
+    }
+    return counts;
+  }, [insights]);
+
+  const categoryItems = useMemo(
+    () => [
+      { slug: 'all', name: 'All Insights', count: insights.length },
+      ...categories.map((category) => ({
+        slug: category.slug,
+        name: category.name,
+        count: categoryCounts[category.slug] || 0,
+      })),
+    ],
+    [categories, insights.length, categoryCounts],
+  );
+
+  const displayedInsights = useMemo(() => {
+    if (activeCategory === 'all') return insights;
+    return insights.filter((item) => item.insightCategorySlug === activeCategory);
+  }, [activeCategory, insights]);
+
+  const resolveCategoryLabel = (slug?: string) => {
+    if (!slug) return 'GENERAL';
+    const found = categories.find((category) => category.slug === slug);
+    return (found?.name || slug).toUpperCase();
+  };
+
+  const formatDate = (value?: string) => {
+    if (!value) return 'Recently';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return 'Recently';
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+  };
 
   return (
     <section className="grid lg:grid-cols-[312px_1fr] gap-12">
@@ -66,17 +154,17 @@ export default function InsightsContent() {
           <h3 className="text-lg font-bold text-gray-900">Categories</h3>
           
           <div className="space-y-3">
-            {categories.map((category) => (
+            {categoryItems.map((category) => (
               <button
-                key={category.name}
-                onClick={() => setActiveCategory(category.name)}
+                key={category.slug}
+                onClick={() => setActiveCategory(category.slug)}
                 className={`w-full flex items-center justify-between px-5 py-3 rounded-xl text-sm font-medium transition-all ${
-                  activeCategory === category.name
+                  activeCategory === category.slug
                     ? 'bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white shadow-lg'
                     : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
                 }`}
                 style={
-                  activeCategory === category.name
+                  activeCategory === category.slug
                     ? { boxShadow: '0px 4px 6px rgba(254, 215, 170, 0.50), 0px 10px 15px rgba(254, 215, 170, 0.50)' }
                     : {}
                 }
@@ -111,11 +199,59 @@ export default function InsightsContent() {
               <input
                 type="email"
                 placeholder="Email address"
+                value={subscriberEmail}
+                onChange={(e) => setSubscriberEmail(e.target.value)}
                 className="w-full px-4 py-2.5 bg-gray-800 text-sm text-gray-300 placeholder-gray-500 rounded-lg border-none outline-none focus:ring-2 focus:ring-[#ff3333]"
               />
-              <button className="w-full bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:shadow-lg transition-all">
-                Subscribe
+              <button
+                type="button"
+                onClick={async () => {
+                  if (!apiBase) {
+                    setSubscribeError('API URL is not configured.');
+                    return;
+                  }
+                  const email = subscriberEmail.trim().toLowerCase();
+                  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    setSubscribeError('Please enter a valid email address.');
+                    return;
+                  }
+                  setSubscribeError(null);
+                  setSubscribeMessage(null);
+                  setIsSubscribing(true);
+                  try {
+                    const response = await fetch(`${apiBase.replace(/\/+$/, '')}/app/newsletter-subscribers`, {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        email,
+                        source: 'tsr-insights',
+                      }),
+                    });
+                    if (!response.ok) {
+                      const errorData = await response
+                        .json()
+                        .catch(() => ({ message: 'Failed to subscribe' }));
+                      throw new Error(errorData.message || 'Failed to subscribe');
+                    }
+                    setSubscriberEmail('');
+                    setSubscribeMessage('Subscribed successfully.');
+                  } catch (err) {
+                    setSubscribeError(err instanceof Error ? err.message : 'Failed to subscribe');
+                  } finally {
+                    setIsSubscribing(false);
+                  }
+                }}
+                disabled={isSubscribing}
+                className="w-full bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:shadow-lg transition-all disabled:opacity-60"
+              >
+                {isSubscribing ? 'Subscribing...' : 'Subscribe'}
               </button>
+              {subscribeMessage ? (
+                <p className="text-xs text-green-300">{subscribeMessage}</p>
+              ) : null}
+              {subscribeError ? (
+                <p className="text-xs text-red-300">{subscribeError}</p>
+              ) : null}
             </div>
           </div>
         </div>
@@ -123,44 +259,46 @@ export default function InsightsContent() {
 
       {/* Right Content - Articles Grid */}
       <div className="grid md:grid-cols-2 gap-8">
-        {articles.map((article, index) => (
+        {isLoading ? (
+          <div className="col-span-2 rounded-xl border border-gray-200 bg-white p-6 text-sm text-gray-500">
+            Loading insights...
+          </div>
+        ) : error ? (
+          <div className="col-span-2 rounded-xl border border-red-200 bg-red-50 p-6 text-sm text-red-700">
+            {error}
+          </div>
+        ) : displayedInsights.length === 0 ? (
+          <div className="col-span-2 rounded-xl border border-gray-200 bg-white p-6 text-sm text-gray-500">
+            No insights found for this category.
+          </div>
+        ) : displayedInsights.map((article) => (
           <div
-            key={index}
+            key={article._id}
             className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
           >
-            {/* Article Image or Placeholder */}
-            {article.image ? (
-              <Image
-                src={article.image}
-                alt={article.title}
-                width={321}
-                height={192}
-                className="w-full h-48 object-cover"
-              />
-            ) : (
-              <div className="relative w-full h-48 bg-gray-200">
-                <div className="absolute inset-0 bg-black/10" />
-                <span className="absolute top-4 left-4 bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-3 py-1 rounded text-xs font-bold tracking-wide uppercase">
-                  {article.category}
-                </span>
-              </div>
-            )}
+            <div className="relative w-full h-48 bg-gray-200">
+              {article.featuredImage ? (
+                <img
+                  src={resolveImageUrl(article.featuredImage)}
+                  alt={article.title}
+                  className="h-full w-full object-cover"
+                />
+              ) : null}
+              <div className="absolute inset-0 bg-black/10" />
+              <span className="absolute top-4 left-4 bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-3 py-1 rounded text-xs font-bold tracking-wide uppercase">
+                {resolveCategoryLabel(article.insightCategorySlug)}
+              </span>
+            </div>
 
             {/* Article Content */}
             <div className="p-6 space-y-3">
-              {article.image && (
-                <span className="inline-block bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-3 py-1 rounded text-xs font-bold tracking-wide uppercase">
-                  {article.category}
-                </span>
-              )}
-
               <div className="flex items-center gap-3 text-xs text-gray-400">
                 <div className="flex items-center gap-1">
                   <CalendarIcon className="w-2.5 h-3" style={{ color: '#9ca3af' }} />
-                  <span>{article.date}</span>
+                  <span>{formatDate(article.createdAt)}</span>
                 </div>
                 <span>•</span>
-                <span>{article.readTime}</span>
+                <span>{parseReadTime(plainText(article.content || ''))}</span>
               </div>
 
               <h3 className="text-xl font-bold text-gray-900">
@@ -168,18 +306,16 @@ export default function InsightsContent() {
               </h3>
 
               <p className="text-sm leading-relaxed text-gray-600">
-                {article.description}
+                {article.metaDescription || plainText(article.content).slice(0, 160)}
               </p>
 
-              {article.image && (
-                <Link 
-                  href={`/article/${article.slug}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff3333] hover:gap-3 transition-all"
-                >
-                  Read Article
-                  <ArrowRightIcon className="w-2.5 h-2" style={{ color: '#ff3333' }} />
-                </Link>
-              )}
+              <Link
+                href={`/article/${article.slug}`}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff3333] hover:gap-3 transition-all"
+              >
+                Read Article
+                <ArrowRightIcon className="w-2.5 h-2" style={{ color: '#ff3333' }} />
+              </Link>
             </div>
           </div>
         ))}

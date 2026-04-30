@@ -1,7 +1,6 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import LinkedInIcon from './icons/linkedin.svg';
 import TwitterIcon from './icons/twitter.svg';
 import { Dribbble } from 'lucide-react';
@@ -16,6 +15,7 @@ function formatPhoneDisplay(phone: string) {
 }
 
 type TeamMember = {
+  _id?: string;
   name: string;
   role: string;
   roleClassName: string;
@@ -30,7 +30,7 @@ type TeamMember = {
   phone?: string;
 };
 
-const team: TeamMember[] = [
+const fallbackTeam: TeamMember[] = [
   {
     name: 'Anupam Kumar',
     role: 'Founder & Principal',
@@ -69,6 +69,58 @@ const team: TeamMember[] = [
 
 export default function TeamSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const [team, setTeam] = useState<TeamMember[]>(fallbackTeam);
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
+
+  const resolveImageUrl = (value: string) => {
+    const raw = (value || '').trim();
+    if (!raw) return '';
+    if (/^https?:\/\//i.test(raw)) return raw;
+    if (!apiBase) return raw;
+    const base = apiBase.replace(/\/+$/, '');
+    const path = raw.startsWith('/') ? raw : `/${raw}`;
+    return `${base}${path}`;
+  };
+
+  useEffect(() => {
+    const load = async () => {
+      if (!apiBase) return;
+      try {
+        const response = await fetch(`${apiBase}/app/team-members`, { cache: 'no-store' });
+        if (!response.ok) return;
+        const json = await response.json();
+        const list = Array.isArray(json?.data)
+          ? json.data
+          : Array.isArray(json?.data?.data)
+            ? json.data.data
+            : Array.isArray(json)
+              ? json
+              : [];
+        if (list.length > 0) {
+          setTeam(
+            list.map((m: TeamMember & { _id?: string }) => ({
+              _id: m._id,
+              name: m.name,
+              role: m.role,
+              roleClassName: m.roleClassName || 'text-gray-600',
+              image: m.image,
+              frameClassName: m.frameClassName || 'bg-gray-200',
+              bio: m.bio,
+              education: m.education,
+              linkedin: m.linkedin,
+              x: m.x,
+              dribbble: m.dribbble,
+              email: m.email,
+              phone: m.phone,
+            })),
+          );
+        }
+      } catch {
+        // keep fallback
+      }
+    };
+    load();
+  }, [apiBase]);
 
   return (
     <section ref={ref} id="team" className="py-16 md:py-20 lg:py-28 bg-white">
@@ -88,7 +140,7 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
           {team.map((member, index) => (
             <div
-              key={member.name}
+              key={member._id || member.name}
               className={`flex flex-col items-center text-center transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
@@ -99,11 +151,10 @@ export default function TeamSection() {
                   className={`relative h-36 w-36 sm:h-40 sm:w-40 md:h-44 md:w-44 rounded-full overflow-hidden ${member.frameClassName} p-1`}
                 >
                   <div className="relative h-full w-full rounded-full overflow-hidden bg-white">
-                    <Image
-                      src={member.image}
+                    <img
+                      src={resolveImageUrl(member.image)}
                       alt={member.name}
-                      fill
-                      className="object-cover"
+                      className="h-full w-full object-cover"
                       sizes="(max-width: 768px) 144px, 176px"
                     />
                   </div>

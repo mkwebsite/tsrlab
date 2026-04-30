@@ -1,11 +1,10 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import QuoteIcon from './icons/quote.svg';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const testimonials = [
+const fallbackTestimonials = [
   {
     quote: '"TSR Lab kickstarted our stakeholder engagement strategy at a critical stage of the project. Their research and  insights directly informed our strategic direction and strengthened our decision-making at senior levels"',
     name: 'Sarah Johnson',
@@ -26,8 +25,53 @@ const testimonials = [
   },
 ];
 
+type ClientTestimonial = {
+  _id?: string;
+  quote: string;
+  name: string;
+  role: string;
+  image: string;
+  sortOrder?: number;
+};
+
 export default function TestimonialsSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const [testimonials, setTestimonials] = useState<ClientTestimonial[]>(fallbackTestimonials);
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
+
+  const resolveImageUrl = (value: string) => {
+    const raw = (value || '').trim();
+    if (!raw) return '';
+    if (/^https?:\/\//i.test(raw)) return raw;
+    if (!apiBase) return raw;
+    const base = apiBase.replace(/\/+$/, '');
+    const path = raw.startsWith('/') ? raw : `/${raw}`;
+    return `${base}${path}`;
+  };
+
+  useEffect(() => {
+    const load = async () => {
+      if (!apiBase) return;
+      try {
+        const response = await fetch(`${apiBase}/app/client-testimonials`, { cache: 'no-store' });
+        if (!response.ok) return;
+        const json = await response.json();
+        const list = Array.isArray(json?.data)
+          ? json.data
+          : Array.isArray(json?.data?.data)
+            ? json.data.data
+            : Array.isArray(json)
+              ? json
+              : [];
+        if (list.length > 0) {
+          setTestimonials(list);
+        }
+      } catch {
+        // Keep fallback testimonials
+      }
+    };
+    load();
+  }, [apiBase]);
 
   return (
     <section ref={ref} className="py-16 md:py-20 lg:py-28 bg-white">
@@ -58,11 +102,9 @@ export default function TestimonialsSection() {
               </div>
 
               <div className="flex items-center gap-3 md:gap-4">
-                <Image
-                  src={testimonial.image}
+                <img
+                  src={resolveImageUrl(testimonial.image)}
                   alt={testimonial.name}
-                  width={48}
-                  height={48}
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover flex-shrink-0"
                 />
                 <div>

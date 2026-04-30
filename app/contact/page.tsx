@@ -30,17 +30,28 @@ export default function ContactPage() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL;
+      if (!apiBase) {
+        throw new Error('API URL is not configured. Please set NEXT_PUBLIC_API_URL.');
+      }
+
+      const response = await fetch(`${apiBase}/app/contact-us`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim() || undefined,
+          message: formData.message.trim() || undefined,
+          source: 'contact-page',
+        }),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
-      if (response.ok) {
+      if (response.ok && data.success !== false) {
         setSubmitStatus({
           type: 'success',
           message: 'Thank you! Your message has been sent successfully. We will get back to you soon.',
@@ -53,15 +64,21 @@ export default function ContactPage() {
           message: '',
         });
       } else {
+        const errMsg =
+          typeof data?.message === 'string'
+            ? data.message
+            : Array.isArray(data?.message)
+              ? data.message.join('; ')
+              : (data as { error?: string })?.error || 'Failed to send message. Please try again.';
         setSubmitStatus({
           type: 'error',
-          message: data.error || 'Failed to send message. Please try again.',
+          message: errMsg,
         });
       }
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: 'Network error. Please check your connection and try again.',
+        message: error instanceof Error ? error.message : 'Network error. Please check your connection and try again.',
       });
     } finally {
       setIsSubmitting(false);
