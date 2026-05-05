@@ -3,26 +3,25 @@
 import React, { useEffect, useState } from 'react';
 import QuoteIcon from './icons/quote.svg';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { SITE_PHOTOS } from '@/lib/sitePhotos';
 
 const fallbackTestimonials = [
   {
     quote: '"TSR Lab kickstarted our stakeholder engagement strategy at a critical stage of the project. Their research and  insights directly informed our strategic direction and strengthened our decision-making at senior levels"',
     name: 'Sarah Johnson',
     role: 'Policy Leader, Sustainability Organization',
-    image: SITE_PHOTOS.teamAvatar1,
+    image: '/images/client-1.jpg',
   },
   {
     quote: '"TSR Lab supported us with deep market insights and structured user research that went well beyond surface-level validation. Their work helped us refine the problem statement, prioritize features, and translate an early-stage idea into a robust, scalable software concept ready for execution."',
     name: 'Michael Chen',
     role: 'Founder, Digital Product Venture',
-    image: SITE_PHOTOS.teamAvatar2,
+    image: '/images/client-2.jpg',
   },
   {
     quote: '"TSR Lab designed and executed our market surveys with strong methodological rigor and added a valuable analytical layer to our market entry assessment.Highly recommended."',
     name: 'Emily Rodriguez',
     role: 'Strategy Lead, Quick Commerce Venture',
-    image: SITE_PHOTOS.teamAvatar3,
+    image: '/images/client-3.jpg',
   },
 ];
 

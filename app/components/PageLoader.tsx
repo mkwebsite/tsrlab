@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+
 export default function PageLoader() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,11 +25,11 @@ export default function PageLoader() {
       <div className="flex flex-col items-center gap-6">
         {/* Logo with pulse animation */}
         <div className="relative animate-pulse">
-          <img
-            src="/images/logo.svg"
+          <Image
+            src="/images/logo.png"
             alt="TSR Lab"
-            width={154}
-            height={32}
+            width={150}
+            height={70}
             className="h-16 w-auto"
           />
         </div>

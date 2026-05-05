@@ -1,6 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
 import StarIcon from '../icons/star.svg';
-import { SITE_PHOTOS } from '@/lib/sitePhotos';
 import ArrowForwardIcon from '../icons/arrow-forward.svg';
 
 export default function SuccessStorySection() {
@@ -70,8 +70,8 @@ export default function SuccessStorySection() {
                   
                   {/* Image */}
                   <div className="rounded-xl md:rounded-2xl overflow-hidden">
-                    <img
-                      src={SITE_PHOTOS.success1}
+                    <Image
+                      src="/images/about/success-team-1.jpg"
                       alt="Success team collaboration"
                       width={216}
                       height={160}
@@ -84,8 +84,8 @@ export default function SuccessStorySection() {
                 <div className="grid grid-cols-2 gap-3 md:gap-4">
                   {/* Image */}
                   <div className="rounded-xl md:rounded-2xl overflow-hidden">
-                    <img
-                      src={SITE_PHOTOS.success2}
+                    <Image
+                      src="/images/about/success-team-2.jpg"
                       alt="Success team member"
                       width={216}
                       height={160}

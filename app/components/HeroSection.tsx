@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import Button from './Button';
 import DotIcon from './icons/dot.svg';
-import { SITE_PHOTOS } from '@/lib/sitePhotos';
 
 const slides = [
   {
@@ -12,7 +12,7 @@ const slides = [
     highlight: 'AI Speed Research',
     titleEnd: '',
     description: 'Insight That Keeps Your Organization Ahead',
-    image: SITE_PHOTOS.heroSlide1,
+    image: '/images/2151003701.jpg',
     imageAlt: 'Red circuit board with binary code and glowing connections',
     servicesHref: '/research-services',
   },
@@ -22,7 +22,7 @@ const slides = [
     highlight: 'Clarity',
     titleEnd: 'at TSR Lab',
     description: 'Explore our range of market research, advisory, and digital solution services',
-    image: SITE_PHOTOS.heroSlide2,
+    image: '/images/about/business-team.jpg',
     imageAlt: 'Business team collaboration',
     servicesHref: '/research-services',
   },
@@ -32,7 +32,7 @@ const slides = [
     highlight: 'AI Workflows',
     titleEnd: '',
     description: 'Turning Insight into Execution',
-    image: SITE_PHOTOS.heroSlide3,
+    image: '/images/DigitalTransformation.jpg',
     imageAlt: 'Business team collaboration',
     servicesHref: '/digital-ai',
   },
@@ -65,10 +65,12 @@ export default function HeroSection() {
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={SITE_PHOTOS.heroBackground}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+        <Image
+          src="/images/27472514_1334.jpg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+          priority
         />
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/85" />
@@ -131,10 +133,11 @@ export default function HeroSection() {
               {/* Right Image */}
               <div className="flex items-center justify-center mt-8 lg:mt-0">
                 <div className="relative w-full aspect-[620/511]">
-                  <img
+                  <Image
                     src={slide.image}
                     alt={slide.imageAlt || slide.title}
-                    className="absolute inset-0 h-full w-full object-cover rounded-2xl md:rounded-3xl shadow-2xl"
+                    fill
+                    className="object-cover rounded-2xl md:rounded-3xl shadow-2xl"
                   />
                 </div>
               </div>

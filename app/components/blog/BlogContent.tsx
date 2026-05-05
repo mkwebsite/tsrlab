@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface BlogContentProps {
   image: string;
@@ -12,10 +13,11 @@ export default function BlogContent({ image, imageAlt }: BlogContentProps) {
         <div className="max-w-4xl mx-auto">
           {/* Featured Image */}
           <div className="relative h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden mb-12 shadow-xl">
-            <img
+            <Image
               src={image}
               alt={imageAlt}
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
 

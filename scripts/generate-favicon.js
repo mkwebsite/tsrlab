@@ -17,7 +17,7 @@ async function generateFavicons() {
   try {
     // Check if logo exists
     if (!fs.existsSync(logoPath)) {
-      console.error('Logo not found. Add public/images/logo.svg or public/images/logo.png');
+      console.error('Logo file not found at:', logoPath);
       process.exit(1);
     }
 

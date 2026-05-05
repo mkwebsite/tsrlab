@@ -3,32 +3,31 @@
 import React, { useEffect, useState } from 'react';
 import ArrowRightCircleIcon from './icons/arrow-right-circle.svg';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { BLOG_CARD_PHOTOS } from '@/lib/sitePhotos';
 
 const fallbackProjects = [
   {
     _id: '1',
     title: 'Competitive Landscape Assessment for Market Entry in the UAE',
     description: 'Consumer Delivery Company - Dubai, UAE',
-    image: BLOG_CARD_PHOTOS[0],
+    image: '/images/Dubai.jpg',
   },
   {
     _id: '2',
     title: 'Customer Insights Tracking & User Feedback Analysis Report',
     description: 'AgTech Startup - Gurgaon, India',
-    image: BLOG_CARD_PHOTOS[1],
+    image: '/images/Gurgaon.jpg',
   },
   {
     _id: '3',
     title: 'Stakeholder Mapping & Stakeholder Engagement Strategy',
     description: 'Sustainability Organization - Global',
-    image: BLOG_CARD_PHOTOS[2],
+    image: '/images/Global.jpg',
   },
   {
     _id: '4',
     title: 'Company Turnaround and Go-to-Market Pitch Redesign',
     description: 'Digital Solutions Company - Jaipur, India',
-    image: BLOG_CARD_PHOTOS[3],
+    image: '/images/Jaipur(1).jpg',
   },
 ];
 
