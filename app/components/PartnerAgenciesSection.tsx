@@ -1,20 +1,19 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { partnerLogoPlaceholder } from '@/lib/sitePhotos';
 
-const partners: { name: string; logo: string; url?: string }[] = [
+const partners: { name: string; url?: string }[] = [
   {
     name: 'Electro IT Solutions',
-    logo: '/images/partners/electro-it-logo.png',
     url: 'https://www.electroitsolutions.com/',
   },
-  { name: 'Businos+', logo: '/images/partners/businos.png', url:'https://businos.com'},
-  { name: 'Bonsucro', logo: '/images/partners/bonsucro.png', url: 'https://bonsucro.com' },
-  { name: 'Relemac Technologies', logo: '/images/partners/relemac.png' , url:'https://relemaccables.com'},
-  { name: 'SILCO', logo: '/images/partners/silco.png' , url:'https://silcopolymers.com'},
-  { name: 'Grokking', logo: '/images/partners/grokking.png' , url:'https://www.grokking.in'},
+  { name: 'Businos+', url: 'https://businos.com' },
+  { name: 'Bonsucro', url: 'https://bonsucro.com' },
+  { name: 'Relemac Technologies', url: 'https://relemaccables.com' },
+  { name: 'SILCO', url: 'https://silcopolymers.com' },
+  { name: 'Grokking', url: 'https://www.grokking.in' },
 ];
 
 /** Logos per slide (matches reference: four cards in a row on desktop) */
@@ -74,8 +73,8 @@ export default function PartnerAgenciesSection() {
                   >
                     {page.map((partner) => {
                       const logo = (
-                        <Image
-                          src={partner.logo}
+                        <img
+                          src={partnerLogoPlaceholder(partner.name)}
                           alt={`${partner.name} logo`}
                           width={200}
                           height={72}

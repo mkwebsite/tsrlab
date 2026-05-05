@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Button from './Button';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -18,12 +17,10 @@ export default function AboutSection() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
             }`}
           >
-            <Image
+            <img
               src="/images/about-image.svg"
               alt="Team discussion"
-              fill
-              className="object-cover object-center rounded-3xl"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="absolute inset-0 h-full w-full object-cover object-center rounded-3xl"
             />
           </div>
 

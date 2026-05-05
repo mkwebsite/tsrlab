@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
     return config;
   },
   images: {
+    // Self-hosted Node often lacks sharp/libvips; skip optimizer so public + remote <img> always work.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -41,6 +43,22 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'pixabay.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ui-avatars.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.cloudfront.net',
       },
     ],
   },

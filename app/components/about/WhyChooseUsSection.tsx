@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import BulbIcon from '../icons/bulb.svg';
 import TeamIcon from '../icons/team.svg';
 
@@ -16,7 +15,7 @@ export default function WhyChooseUsSection() {
                 boxShadow: '0px 25px 50px rgba(0, 0, 0, 0.25)',
               }}
             >
-              <Image
+              <img
                 src="/images/about/video-thumbnail.svg"
                 alt="Video thumbnail"
                 width={664}

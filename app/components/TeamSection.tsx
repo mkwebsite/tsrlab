@@ -5,6 +5,7 @@ import LinkedInIcon from './icons/linkedin.svg';
 import TwitterIcon from './icons/twitter.svg';
 import { Dribbble } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { SITE_PHOTOS } from '@/lib/sitePhotos';
 
 function formatPhoneDisplay(phone: string) {
   const cleaned = phone.replace(/\s/g, '');
@@ -35,7 +36,7 @@ const fallbackTeam: TeamMember[] = [
     name: 'Anupam Kumar',
     role: 'Founder & Principal',
     roleClassName: 'text-[#0d9488]',
-    image: '/images/about/team-member-2.jpg',
+    image: SITE_PHOTOS.teamAvatar2,
     frameClassName: 'bg-gradient-to-br from-gray-200 to-gray-400',
     bio:
       'Anupam Kumar is the Founder & Principal of TSR Lab, with over 9 years of experience across research, analytics, government consulting, and digital transformation in Asia and the Middle East.',
@@ -49,7 +50,7 @@ const fallbackTeam: TeamMember[] = [
     name: 'Manish Kumar',
     role: 'CEO & Founder',
     roleClassName: 'text-[#2563eb]',
-    image: '/images/about/team-member-1.jpg',
+    image: SITE_PHOTOS.teamAvatar1,
     frameClassName: 'bg-gray-100',
     bio: 'A seasoned entrepreneur with a passion for technology and building products that create lasting impact for clients and communities.',
     linkedin: 'https://www.linkedin.com/company/tsrlab/',
@@ -59,7 +60,7 @@ const fallbackTeam: TeamMember[] = [
     name: 'Prem Upadhyay',
     role: 'Creative Director',
     roleClassName: 'text-[#9333ea]',
-    image: '/images/about/team-member-3.jpg',
+    image: SITE_PHOTOS.teamAvatar3,
     frameClassName: 'bg-[#84cc16]',
     bio: 'Brings a user-first mindset to every engagement, with a focus on visual storytelling and clarity across digital touchpoints.',
     linkedin: 'https://www.linkedin.com/company/tsrlab/',

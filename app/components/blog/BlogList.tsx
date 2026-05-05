@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import CalendarIcon from '../icons/calendar.svg';
+import { BLOG_CARD_PHOTOS } from '@/lib/sitePhotos';
 import ArrowRightIcon from '../icons/arrow-right.svg';
 
 interface BlogPost {
@@ -24,7 +24,7 @@ const blogPosts: BlogPost[] = [
     author: 'Sarah Johnson',
     date: 'December 15, 2024',
     readTime: '5 min read',
-    image: '/images/project-1.jpg',
+    image: BLOG_CARD_PHOTOS[0],
     slug: 'top-10-tech-trends-2024',
   },
   {
@@ -34,7 +34,7 @@ const blogPosts: BlogPost[] = [
     author: 'Michael Chen',
     date: 'December 10, 2024',
     readTime: '8 min read',
-    image: '/images/project-2.jpg',
+    image: BLOG_CARD_PHOTOS[1],
     slug: 'digital-transformation-guide',
   },
   {
@@ -44,7 +44,7 @@ const blogPosts: BlogPost[] = [
     author: 'Emily Rodriguez',
     date: 'December 5, 2024',
     readTime: '6 min read',
-    image: '/images/project-3.jpg',
+    image: BLOG_CARD_PHOTOS[2],
     slug: 'ai-machine-learning-business',
   },
   {
@@ -54,7 +54,7 @@ const blogPosts: BlogPost[] = [
     author: 'David Park',
     date: 'November 28, 2024',
     readTime: '7 min read',
-    image: '/images/project-4.jpg',
+    image: BLOG_CARD_PHOTOS[3],
     slug: 'market-research-best-practices',
   },
   {
@@ -64,7 +64,7 @@ const blogPosts: BlogPost[] = [
     author: 'Lisa Anderson',
     date: 'November 20, 2024',
     readTime: '6 min read',
-    image: '/images/project-5.jpg',
+    image: BLOG_CARD_PHOTOS[4],
     slug: 'cloud-computing-security',
   },
   {
@@ -74,7 +74,7 @@ const blogPosts: BlogPost[] = [
     author: 'James Wilson',
     date: 'November 15, 2024',
     readTime: '5 min read',
-    image: '/images/project-6.jpg',
+    image: BLOG_CARD_PHOTOS[5],
     slug: 'innovation-strategies-growth',
   },
 ];
@@ -100,11 +100,10 @@ export default function BlogList() {
             >
               {/* Post Image */}
               <div className="relative h-56 md:h-64 bg-gray-100 overflow-hidden">
-                <Image
+                <img
                   src={post.image}
                   alt={post.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 

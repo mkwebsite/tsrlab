@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import ArrowRightIcon from '../icons/arrow-right.svg';
+import { BLOG_CARD_PHOTOS } from '@/lib/sitePhotos';
 
 type ProjectCategory = 'All Projects' | 'Consulting' | 'Research' | 'Strategy' | 'Technology' | 'Innovation';
 
@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: 'Business Intelligence Dashboard',
     description: 'Designed and implemented a data-driven business intelligence dashboard to improve executive decision-making.',
     category: 'Technology',
-    image: '/images/project-2.jpg',
+    image: BLOG_CARD_PHOTOS[1],
     imageAlt: 'Business intelligence dashboard with analytics and charts',
   },
   {

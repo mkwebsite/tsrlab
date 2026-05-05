@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import Button from './Button';
 import EmailIcon from './icons/email.svg';
 import ArrowRightIcon from './icons/arrow-right.svg';
@@ -76,11 +75,12 @@ export default function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between py-5">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo.png"
+            {/* Plain <img>: avoids /_next/image (missing logo.png in deploy + SVG optimizer quirks). */}
+            <img
+              src="/images/logo.svg"
               alt="TSR Lab"
-              width={119}
-              height={56}
+              width={154}
+              height={32}
               className="h-14 w-auto"
             />
           </Link>
@@ -168,11 +168,11 @@ export default function Header() {
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-white/80 backdrop-blur-sm">
-          <Image
-            src="/images/logo.png"
+          <img
+            src="/images/logo.svg"
             alt="TSR Lab"
-            width={90}
-            height={42}
+            width={154}
+            height={32}
             className="h-10 w-auto"
           />
           <button

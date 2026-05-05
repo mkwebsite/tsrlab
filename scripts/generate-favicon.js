@@ -2,7 +2,9 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const logoPath = path.join(__dirname, '../public/images/logo.png');
+const logoSvgPath = path.join(__dirname, '../public/images/logo.svg');
+const logoPngPath = path.join(__dirname, '../public/images/logo.png');
+const logoPath = fs.existsSync(logoPngPath) ? logoPngPath : logoSvgPath;
 const publicDir = path.join(__dirname, '../public');
 const appDir = path.join(__dirname, '../app');
 
@@ -15,7 +17,7 @@ async function generateFavicons() {
   try {
     // Check if logo exists
     if (!fs.existsSync(logoPath)) {
-      console.error('Logo file not found at:', logoPath);
+      console.error('Logo not found. Add public/images/logo.svg or public/images/logo.png');
       process.exit(1);
     }
 

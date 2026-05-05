@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Button from './Button';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { SITE_PHOTOS } from '@/lib/sitePhotos';
 
 export default function GuidanceSection() {
   const { ref, isVisible } = useScrollAnimation();
@@ -15,12 +15,10 @@ export default function GuidanceSection() {
     >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/project-1.jpg"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority={false}
+        <img
+          src={SITE_PHOTOS.guidanceBg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1e2345]/95 to-[#2d3561]/90"></div>

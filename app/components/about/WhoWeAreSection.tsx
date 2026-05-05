@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
 import TrendingUpIcon from '../icons/trending-up.svg';
+import { SITE_PHOTOS } from '@/lib/sitePhotos';
 import ProgressBarIcon from '../icons/progress-bar.svg';
 
 export default function WhoWeAreSection() {
@@ -43,22 +43,22 @@ export default function WhoWeAreSection() {
             {/* Team Info */}
             <div className="flex items-center gap-3 md:gap-4">
               <div className="flex items-center -space-x-3 md:-space-x-4">
-                <Image
-                  src="/images/about/team-member-1.jpg"
+                <img
+                  src={SITE_PHOTOS.teamAvatar1}
                   alt="Team member"
                   width={48}
                   height={48}
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover"
                 />
-                <Image
-                  src="/images/about/team-member-2.jpg"
+                <img
+                  src={SITE_PHOTOS.teamAvatar2}
                   alt="Team member"
                   width={48}
                   height={48}
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover"
                 />
-                <Image
-                  src="/images/about/team-member-3.jpg"
+                <img
+                  src={SITE_PHOTOS.teamAvatar3}
                   alt="Team member"
                   width={48}
                   height={48}
@@ -95,8 +95,8 @@ export default function WhoWeAreSection() {
             
             {/* Main Image Container */}
             <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl shadow-gray-200">
-              <Image
-                src="/images/about/business-team.jpg"
+              <img
+                src={SITE_PHOTOS.aboutTeam}
                 alt="Business team discussion"
                 width={664}
                 height={600}

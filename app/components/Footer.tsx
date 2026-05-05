@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
 import LinkedInIcon from './icons/linkedin.svg';
+import { SITE_PHOTOS } from '@/lib/sitePhotos';
 import TwitterIcon from './icons/twitter.svg';
 import LocationIcon from './icons/location.svg';
 import EmailFooterIcon from './icons/email-footer.svg';
@@ -12,11 +12,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-16 mb-12 md:mb-16">
           {/* Brand Column */}
           <div className="space-y-5 md:space-y-7 sm:col-span-2 lg:col-span-1">
-            <Image
-              src="/images/logo.png"
+            <img
+              src="/images/logo.svg"
               alt="TSR Lab"
-              width={103}
-              height={50}
+              width={154}
+              height={32}
               className="h-12 w-auto"
             />
             <div className="space-y-3 text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
@@ -86,8 +86,8 @@ export default function Footer() {
             <ul className="space-y-4 md:space-y-5">
               <li>
                 <a href="#" className="group flex gap-3">
-                  <Image
-                    src="/images/project-1.jpg"
+                  <img
+                    src={SITE_PHOTOS.footerBlog1}
                     alt="Tech trends blog"
                     width={60}
                     height={60}
@@ -105,8 +105,8 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="group flex gap-3">
-                  <Image
-                    src="/images/project-2.jpg"
+                  <img
+                    src={SITE_PHOTOS.footerBlog2}
                     alt="Digital transformation blog"
                     width={60}
                     height={60}

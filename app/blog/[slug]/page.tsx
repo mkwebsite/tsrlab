@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import BlogDetailHero from '../../components/blog/BlogDetailHero';
 import BlogContent from '../../components/blog/BlogContent';
+import { SITE_PHOTOS } from '@/lib/sitePhotos';
 
 export default function BlogDetailPage() {
   // In a real application, this data would come from a CMS or database based on the slug
@@ -11,7 +12,7 @@ export default function BlogDetailPage() {
     author: 'Sarah Johnson',
     date: 'December 15, 2024',
     readTime: '5 min read',
-    image: '/images/project-1.jpg',
+    image: SITE_PHOTOS.blogFeatured,
   };
 
   return (
