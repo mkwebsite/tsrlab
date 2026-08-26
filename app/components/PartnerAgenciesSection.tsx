@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 const partners: { name: string; logo: string; url?: string }[] = [
   {
-    name: 'Electro IT Solutions',
-    logo: '/images/partners/electro-it-logo.png',
-    url: 'https://www.electroitsolutions.com/',
+    name: 'Electro AI Lab',
+    logo: '/images/partners/electro-ai-lab.png',
+    url: 'https://www.electroailab.com/',
   },
   { name: 'Businos+', logo: '/images/partners/businos.png', url: 'https://businos.com' },
   { name: 'Bonsucro', logo: '/images/partners/bonsucro.png', url: 'https://bonsucro.com' },
