@@ -30,7 +30,7 @@ export default function WhyChooseUsSection() {
                 aria-label="Play video"
               >
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                  <div className="w-0 h-0 border-t-6 md:border-t-8 border-t-transparent border-l-10 md:border-l-12 border-l-[#ff3333] border-b-6 md:border-b-8 border-b-transparent ml-1" />
+                  <div className="w-0 h-0 border-t-6 md:border-t-8 border-t-transparent border-l-10 md:border-l-12 border-l-[#E53D00] border-b-6 md:border-b-8 border-b-transparent ml-1" />
                 </div>
               </button>
             </div>
@@ -40,7 +40,7 @@ export default function WhyChooseUsSection() {
           <div className="space-y-6 md:space-y-8 order-1 lg:order-2">
             {/* Header */}
             <div className="space-y-3 md:space-y-4">
-              <p className="text-xs md:text-sm font-semibold tracking-wider uppercase text-[#ff3333]">
+              <p className="text-xs md:text-sm font-semibold tracking-wider uppercase text-[#E53D00]">
                 Why Choose Us
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
@@ -66,7 +66,7 @@ export default function WhyChooseUsSection() {
               {/* Innovative Ideas */}
               <div className="flex items-start gap-3 md:gap-4">
                 <div className="flex-shrink-0 mt-0.5">
-                  <BulbIcon className="w-2.5 h-3.5 md:w-3 md:h-4" style={{ color: '#ff3333' }} />
+                  <BulbIcon className="w-2.5 h-3.5 md:w-3 md:h-4" style={{ color: '#E53D00' }} />
                 </div>
                 <div className="space-y-0.5 md:space-y-1">
                   <h3 className="text-sm md:text-base font-bold text-gray-900">Innovative Ideas</h3>
@@ -80,7 +80,7 @@ export default function WhyChooseUsSection() {
               {/* Expert Team */}
               <div className="flex items-start gap-3 md:gap-4">
                 <div className="flex-shrink-0 mt-0.5">
-                  <TeamIcon className="w-4 h-3.5 md:w-5 md:h-4" style={{ color: '#ff3333' }} />
+                  <TeamIcon className="w-4 h-3.5 md:w-5 md:h-4" style={{ color: '#E53D00' }} />
                 </div>
                 <div className="space-y-0.5 md:space-y-1">
                   <h3 className="text-sm md:text-base font-bold text-gray-900">Expert Team</h3>

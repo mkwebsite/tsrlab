@@ -110,14 +110,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section ref={ref} className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#fef3f2] to-white">
+    <section ref={ref} className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#FCFFF7] to-white">
       <div className="container-custom">
         {/* Header */}
         <div className={`text-center space-y-4 md:space-y-5 mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-xs font-bold tracking-[0.15em] text-[#ff3333] uppercase">
+          <p className="text-xs font-bold tracking-[0.15em] text-[#E53D00] uppercase">
             Get In Touch
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#111827]">
+          <h2 className="heading-section">
             Schedule A Call
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-[#4b5563] px-4">
@@ -150,7 +150,7 @@ export default function ContactSection() {
               required
               autoComplete="name"
               disabled={isSubmitting}
-              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
             />
             <input
               type="email"
@@ -161,7 +161,7 @@ export default function ContactSection() {
               required
               autoComplete="email"
               disabled={isSubmitting}
-              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
             />
           </div>
 
@@ -174,7 +174,7 @@ export default function ContactSection() {
               onChange={handleChange}
               autoComplete="tel"
               disabled={isSubmitting}
-              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
             />
             <input
               type="url"
@@ -184,7 +184,7 @@ export default function ContactSection() {
               onChange={handleChange}
               autoComplete="url"
               disabled={isSubmitting}
-              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+              className="bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
             />
           </div>
 
@@ -196,7 +196,7 @@ export default function ContactSection() {
               value={formData.subject}
               onChange={handleChange}
               disabled={isSubmitting}
-              className="w-full bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+              className="w-full bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
             />
           </div>
 
@@ -208,7 +208,7 @@ export default function ContactSection() {
               value={formData.message}
               onChange={handleChange}
               disabled={isSubmitting}
-              className="w-full bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all resize-y min-h-[100px]"
+              className="w-full bg-white px-4 md:px-6 py-3.5 md:py-5 rounded-lg md:rounded-xl border border-gray-200 focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm md:text-base text-[#1f2937] placeholder:text-[#9ca3af] transition-all resize-y min-h-[100px]"
             />
           </div>
 
@@ -216,7 +216,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white font-semibold text-sm md:text-base shadow-lg shadow-[#ff3333]/30 hover:shadow-xl hover:shadow-[#ff3333]/40 hover:scale-105 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white font-semibold text-sm md:text-base shadow-lg shadow-[#046865]/30 hover:shadow-xl hover:shadow-[#21A0A0]/40 hover:scale-105 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
               {isSubmitting ? 'Submitting...' : 'Schedule A Call'}
               <SendIcon className="w-4 h-4" style={{ color: '#ffffff' }} />

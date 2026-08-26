@@ -52,7 +52,7 @@ export default function DigitalServicesSection() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-3">
-          <p className="text-sm font-semibold tracking-wider uppercase text-[#ff3333]">
+          <p className="text-sm font-semibold tracking-wider uppercase text-[#E53D00]">
             What We Offer
           </p>
           <h2 className="text-4xl font-bold text-gray-900">
@@ -70,7 +70,7 @@ export default function DigitalServicesSection() {
               key={index}
               className="bg-gray-50 rounded-2xl p-8 space-y-6 hover:shadow-lg transition-shadow"
             >
-              <service.icon className="w-6 h-6" style={{ color: '#ff3333' }} />
+              <service.icon className="w-6 h-6" style={{ color: '#E53D00' }} />
               
               <h3 className="text-xl font-bold text-gray-900">
                 {service.title}
@@ -83,7 +83,7 @@ export default function DigitalServicesSection() {
               <ul className="space-y-2">
                 {service.items.map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2">
-                    <BulletPointIcon className="w-1.5 h-1.5 flex-shrink-0" style={{ color: '#ff3333' }} />
+                    <BulletPointIcon className="w-1.5 h-1.5 flex-shrink-0" style={{ color: '#E53D00' }} />
                     <span className="text-sm text-gray-700">{item}</span>
                   </li>
                 ))}

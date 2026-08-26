@@ -5,6 +5,13 @@
   :root {
     --font-poppins: 'Poppins', sans-serif;
     --font-inter: 'Inter', sans-serif;
+
+    /* TSR Lab brand palette */
+    --color-deep-teal: #046865;
+    --color-transition-teal: #21A0A0;
+    --color-transition-orange: #E53D00;
+    --color-frontier-yellow: #FFE900;
+    --color-soft-white: #FCFFF7;
   }
 
   * {
@@ -15,6 +22,7 @@
 
   body {
     font-family: var(--font-poppins);
+    background-color: var(--color-soft-white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -128,6 +136,92 @@
     }
   }
 
+  .animate-hero-kenburns {
+    animation: heroKenBurns 8s ease-out forwards;
+    will-change: transform;
+  }
+
+  @keyframes heroKenBurns {
+    from {
+      transform: scale(1.08);
+    }
+    to {
+      transform: scale(1.18);
+    }
+  }
+
+  .animate-trusted-marquee {
+    animation: trustedMarquee 28s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-trusted-marquee.is-paused {
+    animation-play-state: paused;
+  }
+
+  @keyframes trustedMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Shared heading system */
+  .heading-section {
+    font-size: 1.875rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-deep-teal);
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 768px) {
+    .heading-section {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-section {
+      font-size: 2.5rem;
+    }
+  }
+
+  .heading-section-light {
+    font-size: 1.875rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 768px) {
+    .heading-section-light {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-section-light {
+      font-size: 2.5rem;
+    }
+  }
+
+  .heading-card {
+    font-size: 1.125rem;
+    line-height: 1.35;
+    font-weight: 700;
+    color: var(--color-deep-teal);
+  }
+
+  @media (min-width: 768px) {
+    .heading-card {
+      font-size: 1.25rem;
+    }
+  }
+
   /* Prose styles for article content */
   .prose {
     color: #4b5563;
@@ -178,13 +272,13 @@
   }
 
   .prose a {
-    color: #ff3333;
+    color: var(--color-transition-orange);
     text-decoration: underline;
     font-weight: 500;
   }
 
   .prose a:hover {
-    color: #f97316;
+    color: var(--color-transition-teal);
   }
 
   .prose-lg h2 {

@@ -10,6 +10,13 @@ import ArrowRightIcon from './icons/arrow-right.svg';
 import LinkedInIcon from './icons/linkedin.svg';
 import TwitterIcon from './icons/twitter.svg';
 
+const navItems = [
+  { label: 'Food & Agri-business', href: '/food-agri-business' },
+  { label: 'Smart Mobility', href: '/smart-mobility' },
+  { label: 'Impact & Public Systems', href: '/impact-public-systems' },
+  { label: 'Insights', href: '/tsr-insights' },
+] as const;
+
 export default function Header() {
   const pathname = usePathname();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -38,17 +45,17 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center gap-6">
-              <a href="mailto:hello@tsrlab.com" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
-                <EmailIcon className="w-3 h-2.5" style={{ color: '#ff3333' }} />
+              <a href="mailto:hello@tsrlab.com" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#E53D00] transition-colors">
+                <EmailIcon className="w-3 h-2.5" style={{ color: '#E53D00' }} />
                 <span>hello@tsrlab.com</span>
               </a>
-              <a href="tel:+971585912084" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a href="tel:+971585912084" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#E53D00] transition-colors">
                 <span className="text-sm leading-none shrink-0" title="United Arab Emirates" aria-hidden>
                   🇦🇪
                 </span>
                 <span>+971 58 591 2084</span>
               </a>
-              <a href="tel:+918144990728" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a href="tel:+918144990728" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#E53D00] transition-colors">
                 <span className="text-sm leading-none shrink-0" title="India" aria-hidden>
                   🇮🇳
                 </span>
@@ -56,14 +63,14 @@ export default function Header() {
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#E53D00] transition-colors">
                 <LinkedInIcon className="w-3.5 h-3" style={{ color: 'currentColor' }} />
               </a>
               <a
                 href="https://x.com/TSRLab1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#374151] hover:text-[#ff3333] transition-colors"
+                className="text-[#374151] hover:text-[#E53D00] transition-colors"
               >
                 <TwitterIcon className="w-4 h-3.5" style={{ color: 'currentColor' }} />
               </a>
@@ -85,47 +92,20 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <a 
-              href="/" 
-              className={`text-sm font-medium transition-colors ${
-                pathname === '/' 
-                  ? 'text-[#ff3333]' 
-                  : 'text-[#4b5563] hover:text-[#ff3333]'
-              }`}
-            >
-              HOME
-            </a>
-            <a 
-              href="/research-services" 
-              className={`text-sm font-medium transition-colors ${
-                pathname === '/research-services' 
-                  ? 'text-[#ff3333]' 
-                  : 'text-[#4b5563] hover:text-[#ff3333]'
-              }`}
-            >
-              RESEARCH & ADVISORY
-            </a>
-            <a 
-              href="/digital-ai" 
-              className={`text-sm font-medium transition-colors ${
-                pathname === '/digital-ai' 
-                  ? 'text-[#ff3333]' 
-                  : 'text-[#4b5563] hover:text-[#ff3333]'
-              }`}
-            >
-              DIGITAL & AI
-            </a>
-            <a 
-              href="/tsr-insights" 
-              className={`text-sm font-medium transition-colors ${
-                pathname === '/tsr-insights' 
-                  ? 'text-[#ff3333]' 
-                  : 'text-[#4b5563] hover:text-[#ff3333]'
-              }`}
-            >
-              TSR INSIGHTS
-            </a>
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                  pathname === item.href
+                    ? 'text-[#E53D00]'
+                    : 'text-[#4b5563] hover:text-[#E53D00]'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
           {/* Desktop Contact Button */}
@@ -162,7 +142,7 @@ export default function Header() {
           isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          background: 'linear-gradient(135deg, #ffffff 0%, #fef3f2 50%, #fff7ed 100%)',
+          background: 'linear-gradient(135deg, #FCFFF7 0%, #ffffff 45%, #E6F6F6 100%)',
           height: '100vh'
         }}
       >
@@ -188,61 +168,34 @@ export default function Header() {
 
         {/* Drawer Navigation */}
         <nav className="flex flex-col p-6">
-          <a
-            href="/"
-            className={`py-3 text-base font-medium transition-colors border-b border-gray-100 ${
-              pathname === '/' 
-                ? 'text-[#ff3333]' 
-                : 'text-[#4b5563] hover:text-[#ff3333]'
-            }`}
-          >
-            HOME
-          </a>
-          <a
-            href="/research-services"
-            className={`py-3 text-base font-medium transition-colors border-b border-gray-100 ${
-              pathname === '/research-services' 
-                ? 'text-[#ff3333]' 
-                : 'text-[#4b5563] hover:text-[#ff3333]'
-            }`}
-          >
-            RESEARCH & ADVISORY
-          </a>
-          <a
-            href="/digital-ai"
-            className={`py-3 text-base font-medium transition-colors border-b border-gray-100 ${
-              pathname === '/digital-ai' 
-                ? 'text-[#ff3333]' 
-                : 'text-[#4b5563] hover:text-[#ff3333]'
-            }`}
-          >
-            DIGITAL & AI
-          </a>
-          <a
-            href="/tsr-insights"
-            className={`py-3 text-base font-medium transition-colors border-b border-gray-100 ${
-              pathname === '/tsr-insights' 
-                ? 'text-[#ff3333]' 
-                : 'text-[#4b5563] hover:text-[#ff3333]'
-            }`}
-          >
-            TSR INSIGHTS
-          </a>
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={`py-3 text-base font-medium transition-colors border-b border-gray-100 ${
+                pathname === item.href
+                  ? 'text-[#E53D00]'
+                  : 'text-[#4b5563] hover:text-[#E53D00]'
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         {/* Contact Info in Drawer */}
         <div className="px-6 py-4 space-y-3 border-t border-gray-100">
-          <a href="mailto:hello@tsrlab.com" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
-            <EmailIcon className="w-4 h-3" style={{ color: '#ff3333' }} />
+          <a href="mailto:hello@tsrlab.com" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#E53D00] transition-colors">
+            <EmailIcon className="w-4 h-3" style={{ color: '#E53D00' }} />
             <span>hello@tsrlab.com</span>
           </a>
-          <a href="tel:+971585912084" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+          <a href="tel:+971585912084" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#E53D00] transition-colors">
             <span className="text-lg leading-none shrink-0" title="United Arab Emirates" aria-hidden>
               🇦🇪
             </span>
             <span>+971 58 591 2084</span>
           </a>
-          <a href="tel:+918144990728" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+          <a href="tel:+918144990728" className="flex items-center gap-3 text-sm font-medium text-[#374151] hover:text-[#E53D00] transition-colors">
             <span className="text-lg leading-none shrink-0" title="India" aria-hidden>
               🇮🇳
             </span>
@@ -253,14 +206,14 @@ export default function Header() {
         {/* Social Links in Drawer */}
         <div className="px-6 py-4 border-t border-gray-100">
           <div className="flex items-center gap-4">
-            <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#ff3333] transition-colors">
+            <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="text-[#374151] hover:text-[#E53D00] transition-colors">
               <LinkedInIcon className="w-5 h-4" style={{ color: 'currentColor' }} />
             </a>
             <a
               href="https://x.com/TSRLab1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#374151] hover:text-[#ff3333] transition-colors"
+              className="text-[#374151] hover:text-[#E53D00] transition-colors"
             >
               <TwitterIcon className="w-5 h-4" style={{ color: 'currentColor' }} />
             </a>

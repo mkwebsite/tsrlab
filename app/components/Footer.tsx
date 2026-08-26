@@ -21,23 +21,19 @@ export default function Footer() {
             />
             <div className="space-y-3 text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
               <p>
-                TSR Lab is a specialist consulting firm with a portfolio spanning strategic advisory,
-                market research, advanced analytics, digital solutions, and AI-native automation.
-              </p>
-              <p>
-                We deliver decision-ready intelligence and AI solutions - helping organizations move
-                faster, operate smarter, and build sustainable competitive advantage.
+                TSR Lab is a sector-focused consulting firm delivering research, strategic advisory, and
+                AI-native intelligence solutions across agri-food, mobility, and the public sector.
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">
+              <a href="https://www.linkedin.com/company/tsrlab/" target="_blank" rel="noopener noreferrer" className="p-2 text-[#374151] hover:text-[#E53D00] transition-colors">
                 <LinkedInIcon className="w-3.5 h-3.5" style={{ color: 'currentColor' }} />
               </a>
               <a
                 href="https://x.com/TSRLab1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors"
+                className="p-2 text-[#374151] hover:text-[#E53D00] transition-colors"
               >
                 <TwitterIcon className="w-4 h-3.5" style={{ color: 'currentColor' }} />
               </a>
@@ -51,27 +47,27 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 md:space-y-3">
               <li>
-                <a href="/" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                <a href="/" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="/about" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                <a href="/about" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="/research-services" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                <a href="/research-services" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="/portfolio" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                <a href="/portfolio" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                <a href="/contact" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors">
                   Contact
                 </a>
               </li>
@@ -94,7 +90,7 @@ export default function Footer() {
                     className="w-14 h-14 md:w-16 md:h-16 rounded-lg object-cover flex-shrink-0"
                   />
                   <div className="space-y-1.5 flex-1 min-w-0">
-                    <h4 className="text-xs md:text-sm font-semibold text-[#374151] group-hover:text-[#ff3333] transition-colors line-clamp-2">
+                    <h4 className="text-xs md:text-sm font-semibold text-[#374151] group-hover:text-[#E53D00] transition-colors line-clamp-2">
                       Top 10 Tech Trends for 2024
                     </h4>
                     <p className="text-[10px] md:text-xs text-[#6b7280]">
@@ -113,7 +109,7 @@ export default function Footer() {
                     className="w-14 h-14 md:w-16 md:h-16 rounded-lg object-cover flex-shrink-0"
                   />
                   <div className="space-y-1.5 flex-1 min-w-0">
-                    <h4 className="text-xs md:text-sm font-semibold text-[#374151] group-hover:text-[#ff3333] transition-colors line-clamp-2">
+                    <h4 className="text-xs md:text-sm font-semibold text-[#374151] group-hover:text-[#E53D00] transition-colors line-clamp-2">
                       Digital Transformation Guide
                     </h4>
                     <p className="text-[10px] md:text-xs text-[#6b7280]">
@@ -131,8 +127,13 @@ export default function Footer() {
               Contact Info
             </h3>
             <ul className="space-y-3 md:space-y-4">
+              <li>
+                <span className="text-xs md:text-sm font-semibold text-[#111827]">
+                  TSterling Research Lab LLP
+                </span>
+              </li>
               <li className="flex items-start gap-2 md:gap-3">
-                <LocationIcon className="w-2.5 h-3.5 mt-0.5 md:mt-1 shrink-0" style={{ color: '#ff3333' }} />
+                <LocationIcon className="w-2.5 h-3.5 mt-0.5 md:mt-1 shrink-0" style={{ color: '#E53D00' }} />
                 <span className="text-xs md:text-sm text-[#374151]">
                 Dubai, UAE. Gurgaon, India. Jaipur, India 
                 </span>
@@ -141,7 +142,7 @@ export default function Footer() {
                 <span className="text-base leading-none shrink-0" title="United Arab Emirates" aria-hidden>
                   🇦🇪
                 </span>
-                <a href="tel:+971585912084" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                <a href="tel:+971585912084" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors">
                   +971 58 591 2084
                 </a>
               </li>
@@ -149,13 +150,13 @@ export default function Footer() {
                 <span className="text-base leading-none shrink-0" title="India" aria-hidden>
                   🇮🇳
                 </span>
-                <a href="tel:+918144990728" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                <a href="tel:+918144990728" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors">
                   +91 8144990728
                 </a>
               </li>
               <li className="flex items-center gap-2 md:gap-3">
-                <EmailFooterIcon className="w-3.5 h-2.5 shrink-0" style={{ color: '#ff3333' }} />
-                <a href="mailto:hello@tsrlab.com" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors break-all">
+                <EmailFooterIcon className="w-3.5 h-2.5 shrink-0" style={{ color: '#E53D00' }} />
+                <a href="mailto:hello@tsrlab.com" className="text-xs md:text-sm text-[#374151] hover:text-[#E53D00] transition-colors break-all">
                   hello@tsrlab.com
                 </a>
               </li>
@@ -169,10 +170,10 @@ export default function Footer() {
             © 2026 TSRLab. All rights reserved.
           </p>
           <div className="flex items-center gap-4 md:gap-6">
-            <a href="#" className="text-xs md:text-sm text-[#4b5563] hover:text-[#ff3333] transition-colors whitespace-nowrap">
+            <a href="#" className="text-xs md:text-sm text-[#4b5563] hover:text-[#E53D00] transition-colors whitespace-nowrap">
               Privacy Policy
             </a>
-            <a href="#" className="text-xs md:text-sm text-[#4b5563] hover:text-[#ff3333] transition-colors whitespace-nowrap">
+            <a href="#" className="text-xs md:text-sm text-[#4b5563] hover:text-[#E53D00] transition-colors whitespace-nowrap">
               Terms of Service
             </a>
           </div>

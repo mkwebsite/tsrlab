@@ -103,13 +103,13 @@ export default function ContactPage() {
       <PageHero />
 
       {/* Contact Info Cards */}
-      <section className="pb-20 bg-[#fef3f2]">
+      <section className="pb-20 bg-[#FCFFF7]">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Address Card */}
             <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#ff3333]/10 mb-6">
-                <LocationIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#E53D00]/10 mb-6">
+                <LocationIcon className="w-6 h-6" style={{ color: '#E53D00' }} />
               </div>
               <h3 className="text-lg font-bold text-[#111827] mb-3">Address</h3>
               <p className="text-[#6b7280] text-sm leading-relaxed">
@@ -120,14 +120,14 @@ export default function ContactPage() {
 
             {/* Phone Card */}
             <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#ff3333]/10 mb-6">
-                <PhoneIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#E53D00]/10 mb-6">
+                <PhoneIcon className="w-6 h-6" style={{ color: '#E53D00' }} />
               </div>
               <h3 className="text-lg font-bold text-[#111827] mb-3">Phone</h3>
               <div className="text-[#6b7280] text-sm space-y-2">
                 <a
                   href="tel:+971585912084"
-                  className="flex items-center justify-center gap-2 hover:text-[#ff3333] transition-colors"
+                  className="flex items-center justify-center gap-2 hover:text-[#E53D00] transition-colors"
                 >
                   <span className="text-base leading-none shrink-0" title="United Arab Emirates" aria-hidden>
                     🇦🇪
@@ -136,7 +136,7 @@ export default function ContactPage() {
                 </a>
                 <a
                   href="tel:+918144990728"
-                  className="flex items-center justify-center gap-2 hover:text-[#ff3333] transition-colors"
+                  className="flex items-center justify-center gap-2 hover:text-[#E53D00] transition-colors"
                 >
                   <span className="text-base leading-none shrink-0" title="India" aria-hidden>
                     🇮🇳
@@ -148,8 +148,8 @@ export default function ContactPage() {
 
             {/* Email Card */}
             <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#ff3333]/10 mb-6">
-                <EmailIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#E53D00]/10 mb-6">
+                <EmailIcon className="w-6 h-6" style={{ color: '#E53D00' }} />
               </div>
               <h3 className="text-lg font-bold text-[#111827] mb-3">Email</h3>
               <p className="text-[#6b7280] text-sm">hello@tsrlab.com</p>
@@ -159,12 +159,12 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-[#fef3f2]">
+      <section className="py-20 bg-[#FCFFF7]">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
             {/* Form Header */}
             <div className="text-center space-y-4 mb-12">
-              <p className="text-xs font-bold tracking-[0.15em] text-[#ff3333] uppercase">
+              <p className="text-xs font-bold tracking-[0.15em] text-[#E53D00] uppercase">
                 Get In Touch
               </p>
               <h2 className="text-4xl font-bold text-[#111827] leading-tight">
@@ -210,7 +210,7 @@ export default function ContactPage() {
                       placeholder="John Doe"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+                      className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
                     />
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                       placeholder="john@example.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+                      className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
                     />
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export default function ContactPage() {
                     placeholder="How can we help?"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+                    className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
                   />
                 </div>
               </div>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full px-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] resize-none transition-all"
+                  className="w-full px-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#E53D00] focus:ring-2 focus:ring-[#E53D00]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] resize-none transition-all"
                 />
               </div>
 
@@ -276,7 +276,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white font-semibold text-base shadow-lg shadow-[#ff3333]/30 hover:shadow-xl hover:shadow-[#ff3333]/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white font-semibold text-base shadow-lg shadow-[#046865]/30 hover:shadow-xl hover:shadow-[#21A0A0]/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? (
                     <>
@@ -297,7 +297,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="pb-0 relative bg-[#fef3f2]">
+      <section className="pb-0 relative bg-[#FCFFF7]">
         <div className="w-full h-[400px] relative">
           {/* Google Maps Embed */}
           <iframe
@@ -322,7 +322,7 @@ export default function ContactPage() {
               href="https://maps.google.com/?q=Dubai+International+City"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff3333] hover:text-[#f97316] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#E53D00] hover:text-[#21A0A0] transition-colors"
             >
               Get Directions
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

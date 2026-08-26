@@ -120,7 +120,7 @@ export default function BlogList() {
                   <span>{post.readTime}</span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#ff3333] transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#E53D00] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 
@@ -133,10 +133,10 @@ export default function BlogList() {
                   
                   <a 
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-[#ff3333] font-semibold text-sm hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-[#E53D00] font-semibold text-sm hover:gap-3 transition-all"
                   >
                     Read More
-                    <ArrowRightIcon className="w-3 h-3" style={{ color: '#ff3333' }} />
+                    <ArrowRightIcon className="w-3 h-3" style={{ color: '#E53D00' }} />
                   </a>
                 </div>
               </div>

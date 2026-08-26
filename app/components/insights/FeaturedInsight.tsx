@@ -89,7 +89,7 @@ export default function FeaturedInsight() {
     <section className="space-y-10">
       {/* Section Header */}
       <div className="space-y-2">
-        <p className="text-xs font-bold tracking-widest uppercase text-[#ff3333]">
+        <p className="text-xs font-bold tracking-widest uppercase text-[#E53D00]">
           Featured Insight
         </p>
         <h2 className="text-4xl font-bold text-gray-900">
@@ -128,7 +128,7 @@ export default function FeaturedInsight() {
 
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 p-12 space-y-4 text-white">
-          <span className="inline-block bg-gradient-to-r from-[#ff3333] to-[#f97316] px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+          <span className="inline-block bg-gradient-to-r from-[#046865] to-[#21A0A0] px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
             {(featured.insightCategorySlug || 'insight').replace(/-/g, ' ')}
           </span>
           
@@ -157,7 +157,7 @@ export default function FeaturedInsight() {
             className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-3 rounded-full font-bold text-base hover:bg-gray-100 transition-all"
           >
             Read More
-            <ArrowRightIcon className="w-3.5 h-3" style={{ color: '#ff3333' }} />
+            <ArrowRightIcon className="w-3.5 h-3" style={{ color: '#E53D00' }} />
           </Link>
         </div>
       </div>

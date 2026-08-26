@@ -64,7 +64,7 @@ export default function ReportInquiryGate({ apiBase, reportUrl, articleSlug }: R
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex items-center rounded-lg bg-gradient-to-r from-[#ff3333] to-[#f97316] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        className="inline-flex items-center rounded-lg bg-gradient-to-r from-[#046865] to-[#21A0A0] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
       >
         View Report (PDF)
       </button>
@@ -87,7 +87,7 @@ export default function ReportInquiryGate({ apiBase, reportUrl, articleSlug }: R
                 placeholder="Name"
                 value={formData.name}
                 onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#ff3333]"
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#E53D00]"
                 disabled={isSubmitting}
               />
               <input
@@ -95,7 +95,7 @@ export default function ReportInquiryGate({ apiBase, reportUrl, articleSlug }: R
                 placeholder="Company Name"
                 value={formData.companyName}
                 onChange={(e) => setFormData((prev) => ({ ...prev, companyName: e.target.value }))}
-                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#ff3333]"
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#E53D00]"
                 disabled={isSubmitting}
               />
               <input
@@ -103,7 +103,7 @@ export default function ReportInquiryGate({ apiBase, reportUrl, articleSlug }: R
                 placeholder="Email"
                 value={formData.email}
                 onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#ff3333]"
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#E53D00]"
                 disabled={isSubmitting}
               />
               <input
@@ -111,7 +111,7 @@ export default function ReportInquiryGate({ apiBase, reportUrl, articleSlug }: R
                 placeholder="Mobile"
                 value={formData.mobile}
                 onChange={(e) => setFormData((prev) => ({ ...prev, mobile: e.target.value }))}
-                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#ff3333]"
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 outline-none focus:border-[#E53D00]"
                 disabled={isSubmitting}
               />
 
@@ -126,7 +126,7 @@ export default function ReportInquiryGate({ apiBase, reportUrl, articleSlug }: R
                 </button>
                 <button
                   type="submit"
-                  className="rounded-lg bg-gradient-to-r from-[#ff3333] to-[#f97316] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-60"
+                  className="rounded-lg bg-gradient-to-r from-[#046865] to-[#21A0A0] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-60"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit & View'}

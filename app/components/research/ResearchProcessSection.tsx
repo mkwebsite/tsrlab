@@ -37,7 +37,7 @@ export default function ResearchProcessSection() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-3">
-          <p className="text-sm font-semibold tracking-wider uppercase text-[#ff3333]">
+          <p className="text-sm font-semibold tracking-wider uppercase text-[#E53D00]">
             How We Work
           </p>
           <h2 className="text-4xl font-bold text-gray-900">
@@ -56,13 +56,13 @@ export default function ResearchProcessSection() {
               className="relative bg-white rounded-2xl p-6 space-y-6 shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Step Number Badge */}
-              <div className="absolute -top-4 -left-4 w-11 h-11 bg-gradient-to-r from-[#ff3333] to-[#f97316] rounded-full flex items-center justify-center">
+              <div className="absolute -top-4 -left-4 w-11 h-11 bg-gradient-to-r from-[#046865] to-[#21A0A0] rounded-full flex items-center justify-center">
                 <span className="text-lg font-bold text-white">{step.number}</span>
               </div>
 
               {/* Icon */}
               <div className="pt-4">
-                <step.icon className="w-4 h-6" style={{ color: '#ff3333' }} />
+                <step.icon className="w-4 h-6" style={{ color: '#E53D00' }} />
               </div>
 
               {/* Content */}

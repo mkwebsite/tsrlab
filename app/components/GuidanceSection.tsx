@@ -23,7 +23,7 @@ export default function GuidanceSection() {
           priority={false}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1e2345]/95 to-[#2d3561]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#046865]/95 to-[#21A0A0]/90"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -33,7 +33,7 @@ export default function GuidanceSection() {
           }`}
         >
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center md:text-left flex-1">
+          <h2 className="heading-section-light text-center md:text-left flex-1">
             Scale your strategic decisions with TSR Lab
           </h2>
 

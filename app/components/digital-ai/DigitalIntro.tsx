@@ -23,9 +23,9 @@ export default function DigitalIntro() {
             </div>
 
             <button 
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-8 py-3.5 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white px-8 py-3.5 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all hover:scale-105"
               style={{
-                boxShadow: '0px 4px 6px #fed7aa, 0px 10px 15px #fed7aa',
+                boxShadow: '0px 4px 6px #FFD4C2, 0px 10px 15px #FFD4C2',
               }}
             >
               Get Started Today
@@ -44,7 +44,7 @@ export default function DigitalIntro() {
                 boxShadow: '0px 8px 10px rgba(0, 0, 0, 0.10), 0px 20px 25px rgba(0, 0, 0, 0.10)',
               }}
             >
-              <AwardIcon className="w-5 h-5" style={{ color: '#ff3333' }} />
+              <AwardIcon className="w-5 h-5" style={{ color: '#E53D00' }} />
               
               <h3 className="text-2xl font-bold text-gray-900">
                 Why Choose Our Digital & AI Services?

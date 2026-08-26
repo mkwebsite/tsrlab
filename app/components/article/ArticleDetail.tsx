@@ -52,7 +52,7 @@ export default async function ArticleDetail({ slug }: { slug: string }) {
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Article Not Available</h1>
           <p className="text-gray-600 mb-4">API URL is not configured.</p>
-          <Link href="/tsr-insights" className="text-[#ff3333] hover:underline">
+          <Link href="/tsr-insights" className="text-[#E53D00] hover:underline">
             Back to TSR Insights
           </Link>
         </div>
@@ -86,7 +86,7 @@ export default async function ArticleDetail({ slug }: { slug: string }) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Article Not Found</h1>
-          <Link href="/tsr-insights" className="text-[#ff3333] hover:underline">
+          <Link href="/tsr-insights" className="text-[#E53D00] hover:underline">
             Back to TSR Insights
           </Link>
         </div>
@@ -106,7 +106,7 @@ export default async function ArticleDetail({ slug }: { slug: string }) {
         {/* Back Button */}
         <Link 
           href="/tsr-insights"
-          className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[#ff3333] transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[#E53D00] transition-colors mb-8"
         >
           <ArrowLeftIcon className="w-4 h-4" style={{ color: 'currentColor' }} />
           Back to TSR Insights
@@ -114,7 +114,7 @@ export default async function ArticleDetail({ slug }: { slug: string }) {
 
         {/* Article Header */}
         <div className="space-y-6 mb-12">
-          <span className="inline-block bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-4 py-1.5 rounded text-xs font-bold tracking-wide uppercase">
+          <span className="inline-block bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white px-4 py-1.5 rounded text-xs font-bold tracking-wide uppercase">
             {(categories.find((category) => category.slug === article.insightCategorySlug)?.name ||
               article.insightCategorySlug ||
               'Insights'
@@ -161,7 +161,7 @@ export default async function ArticleDetail({ slug }: { slug: string }) {
               }}
             />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-white md:p-8">
-              <span className="inline-block rounded-full bg-gradient-to-r from-[#ff3333] to-[#f97316] px-3 py-1 text-[11px] font-bold uppercase tracking-wide md:px-4 md:py-1.5 md:text-xs">
+              <span className="inline-block rounded-full bg-gradient-to-r from-[#046865] to-[#21A0A0] px-3 py-1 text-[11px] font-bold uppercase tracking-wide md:px-4 md:py-1.5 md:text-xs">
                 {(categories.find((category) => category.slug === article.insightCategorySlug)?.name ||
                   article.insightCategorySlug ||
                   'Insights'
@@ -184,7 +184,7 @@ export default async function ArticleDetail({ slug }: { slug: string }) {
           style={{
             '--tw-prose-headings': '#111827',
             '--tw-prose-body': '#4b5563',
-            '--tw-prose-links': '#ff3333',
+            '--tw-prose-links': '#E53D00',
           } as React.CSSProperties}
         />
 
@@ -192,10 +192,10 @@ export default async function ArticleDetail({ slug }: { slug: string }) {
         <div className="mt-16 pt-8 border-t border-gray-200">
           <Link 
             href="/tsr-insights"
-            className="inline-flex items-center gap-2 text-base font-semibold text-[#ff3333] hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-base font-semibold text-[#E53D00] hover:gap-3 transition-all"
           >
             View More Insights
-            <ArrowLeftIcon className="w-4 h-4 rotate-180" style={{ color: '#ff3333' }} />
+            <ArrowLeftIcon className="w-4 h-4 rotate-180" style={{ color: '#E53D00' }} />
           </Link>
         </div>
       </div>

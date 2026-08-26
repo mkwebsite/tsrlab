@@ -27,9 +27,9 @@ export default function SuccessStorySection() {
               {/* Left Content */}
               <div className="space-y-4 md:space-y-6">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-1.5 md:gap-2 bg-[#ff3333]/10 rounded-full px-2.5 md:px-3 py-1.5">
-                  <StarIcon className="w-2.5 h-2.5 md:w-3 md:h-3" style={{ color: '#ff3333' }} />
-                  <span className="text-[10px] md:text-xs font-bold tracking-wide uppercase text-[#ff3333]">
+                <div className="inline-flex items-center gap-1.5 md:gap-2 bg-[#E53D00]/10 rounded-full px-2.5 md:px-3 py-1.5">
+                  <StarIcon className="w-2.5 h-2.5 md:w-3 md:h-3" style={{ color: '#E53D00' }} />
+                  <span className="text-[10px] md:text-xs font-bold tracking-wide uppercase text-[#E53D00]">
                     Success Story
                   </span>
                 </div>
@@ -63,8 +63,8 @@ export default function SuccessStorySection() {
                 {/* Stats Cards Row */}
                 <div className="grid grid-cols-2 gap-3 md:gap-4">
                   {/* Client Satisfaction Card */}
-                  <div className="bg-[#ff3333]/5 rounded-xl md:rounded-2xl p-4 md:p-6 space-y-0.5 md:space-y-1">
-                    <p className="text-2xl md:text-3xl font-bold text-[#ff3333]">98%</p>
+                  <div className="bg-[#E53D00]/5 rounded-xl md:rounded-2xl p-4 md:p-6 space-y-0.5 md:space-y-1">
+                    <p className="text-2xl md:text-3xl font-bold text-[#E53D00]">98%</p>
                     <p className="text-xs md:text-sm font-medium text-gray-600">Client Satisfaction</p>
                   </div>
                   

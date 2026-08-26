@@ -67,7 +67,7 @@ export default function FeaturesSection() {
       <div className="container-custom">
         {/* Header */}
         <div className={`text-center space-y-4 md:space-y-5 mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e2345]">
+          <h2 className="heading-section">
             What We Do
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-[#4b5563] max-w-3xl mx-auto px-4">
@@ -87,10 +87,10 @@ export default function FeaturesSection() {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="space-y-4 md:space-y-5">
-                  <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-[#ffedd5] rounded-xl">
-                    <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: '#ff3333' }} />
+                  <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-[#FFD4C2] rounded-xl">
+                    <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: '#E53D00' }} />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#1e2345]">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#046865]">
                     {feature.title}
                   </h3>
                   <p className="text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
@@ -100,7 +100,7 @@ export default function FeaturesSection() {
                     <ul className="space-y-2 mt-4">
                       {feature.items.map((item, idx) => (
                         <li key={idx} className="flex items-center gap-2 text-xs md:text-sm text-[#4b5563]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#ff3333] flex-shrink-0"></span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#E53D00] flex-shrink-0"></span>
                           {item}
                         </li>
                       ))}

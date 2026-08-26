@@ -31,7 +31,7 @@ export default function ResearchHero() {
           <div className="flex items-center justify-center gap-2">
             <span className="text-sm font-normal text-gray-500">Home</span>
             <ChevronRightIcon className="w-1.5 h-3" style={{ color: '#6b7280' }} />
-            <span className="text-sm font-medium text-[#ff3333]">Research Services</span>
+            <span className="text-sm font-medium text-[#E53D00]">Research Services</span>
           </div>
         </div>
       </div>

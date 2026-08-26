@@ -160,7 +160,7 @@ export default function InsightsContent() {
                 onClick={() => setActiveCategory(category.slug)}
                 className={`w-full flex items-center justify-between px-5 py-3 rounded-xl text-sm font-medium transition-all ${
                   activeCategory === category.slug
-                    ? 'bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white shadow-lg'
                     : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
                 }`}
                 style={
@@ -201,7 +201,7 @@ export default function InsightsContent() {
                 placeholder="Email address"
                 value={subscriberEmail}
                 onChange={(e) => setSubscriberEmail(e.target.value)}
-                className="w-full px-4 py-2.5 bg-gray-800 text-sm text-gray-300 placeholder-gray-500 rounded-lg border-none outline-none focus:ring-2 focus:ring-[#ff3333]"
+                className="w-full px-4 py-2.5 bg-gray-800 text-sm text-gray-300 placeholder-gray-500 rounded-lg border-none outline-none focus:ring-2 focus:ring-[#E53D00]"
               />
               <button
                 type="button"
@@ -242,7 +242,7 @@ export default function InsightsContent() {
                   }
                 }}
                 disabled={isSubscribing}
-                className="w-full bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:shadow-lg transition-all disabled:opacity-60"
+                className="w-full bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:shadow-lg transition-all disabled:opacity-60"
               >
                 {isSubscribing ? 'Subscribing...' : 'Subscribe'}
               </button>
@@ -285,7 +285,7 @@ export default function InsightsContent() {
                 />
               ) : null}
               <div className="absolute inset-0 bg-black/10" />
-              <span className="absolute top-4 left-4 bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-3 py-1 rounded text-xs font-bold tracking-wide uppercase">
+              <span className="absolute top-4 left-4 bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white px-3 py-1 rounded text-xs font-bold tracking-wide uppercase">
                 {resolveCategoryLabel(article.insightCategorySlug)}
               </span>
             </div>
@@ -311,10 +311,10 @@ export default function InsightsContent() {
 
               <Link
                 href={`/article/${article.slug}`}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff3333] hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#E53D00] hover:gap-3 transition-all"
               >
                 Read Article
-                <ArrowRightIcon className="w-2.5 h-2" style={{ color: '#ff3333' }} />
+                <ArrowRightIcon className="w-2.5 h-2" style={{ color: '#E53D00' }} />
               </Link>
             </div>
           </div>

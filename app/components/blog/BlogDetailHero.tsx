@@ -33,11 +33,11 @@ export default function BlogDetailHero({ title, author, date, readTime }: BlogDe
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
           <div className="flex items-center justify-center gap-1.5 md:gap-2 mb-6">
-            <a href="/" className="text-xs md:text-sm font-normal text-gray-500 hover:text-[#ff3333] transition-colors">Home</a>
+            <a href="/" className="text-xs md:text-sm font-normal text-gray-500 hover:text-[#E53D00] transition-colors">Home</a>
             <ChevronRightIcon className="w-1.5 h-2.5 md:h-3" style={{ color: '#6b7280' }} />
-            <a href="/blog" className="text-xs md:text-sm font-normal text-gray-500 hover:text-[#ff3333] transition-colors">Blog</a>
+            <a href="/blog" className="text-xs md:text-sm font-normal text-gray-500 hover:text-[#E53D00] transition-colors">Blog</a>
             <ChevronRightIcon className="w-1.5 h-2.5 md:h-3" style={{ color: '#6b7280' }} />
-            <span className="text-xs md:text-sm font-medium text-[#ff3333]">Article</span>
+            <span className="text-xs md:text-sm font-medium text-[#E53D00]">Article</span>
           </div>
 
           {/* Title */}

@@ -69,11 +69,11 @@ const projects: Project[] = [
 const categories: ProjectCategory[] = ['All Projects', 'Consulting', 'Research', 'Strategy', 'Technology', 'Innovation'];
 
 const categoryColors: Record<Exclude<ProjectCategory, 'All Projects'>, string> = {
-  Strategy: 'bg-[#ff3333] text-white',
-  Technology: 'bg-[#2563eb] text-white',
-  Research: 'bg-[#10b981] text-white',
-  Consulting: 'bg-[#3b82f6] text-white',
-  Innovation: 'bg-[#8b5cf6] text-white',
+  Strategy: 'bg-[#E53D00] text-white',
+  Technology: 'bg-[#046865] text-white',
+  Research: 'bg-[#21A0A0] text-white',
+  Consulting: 'bg-[#046865] text-white',
+  Innovation: 'bg-[#FFE900] text-[#046865]',
 };
 
 export default function PortfolioSection() {
@@ -111,8 +111,8 @@ export default function PortfolioSection() {
               }}
               className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-semibold text-xs md:text-sm transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white shadow-lg shadow-[#ff3333]/30'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-[#ff3333] hover:text-[#ff3333]'
+                  ? 'bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white shadow-lg shadow-[#046865]/30'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-[#E53D00] hover:text-[#E53D00]'
               }`}
             >
               {category}
@@ -146,7 +146,7 @@ export default function PortfolioSection() {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#ff3333] transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#E53D00] transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-sm text-gray-600 mb-4 line-clamp-3">
@@ -156,12 +156,12 @@ export default function PortfolioSection() {
                 <div className="flex items-center justify-between gap-3">
                   <a 
                     href="#"
-                    className="inline-flex items-center gap-2 text-[#ff3333] font-semibold text-sm hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-[#E53D00] font-semibold text-sm hover:gap-3 transition-all"
                   >
                     View Project
-                    <ArrowRightIcon className="w-3 h-3" style={{ color: '#ff3333' }} />
+                    <ArrowRightIcon className="w-3 h-3" style={{ color: '#E53D00' }} />
                   </a>
-                  <button className="px-5 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold hover:bg-[#ff3333] hover:text-white transition-all">
+                  <button className="px-5 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold hover:bg-[#E53D00] hover:text-white transition-all">
                     More
                   </button>
                 </div>

@@ -31,7 +31,7 @@ export default function PageHero() {
           <div className="flex items-center justify-center gap-1.5 md:gap-2">
             <span className="text-xs md:text-sm font-normal text-gray-500">Home</span>
             <ChevronRightIcon className="w-1.5 h-2.5 md:h-3" style={{ color: '#6b7280' }} />
-            <span className="text-xs md:text-sm font-medium text-[#ff3333]">Portfolio</span>
+            <span className="text-xs md:text-sm font-medium text-[#E53D00]">Portfolio</span>
           </div>
         </div>
       </div>

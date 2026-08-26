@@ -48,7 +48,7 @@ const fallbackTeam: TeamMember[] = [
   {
     name: 'Manish Kumar',
     role: 'CEO & Founder',
-    roleClassName: 'text-[#2563eb]',
+    roleClassName: 'text-[#21A0A0]',
     image: '/images/about/team-member-1.jpg',
     frameClassName: 'bg-gray-100',
     bio: 'A seasoned entrepreneur with a passion for technology and building products that create lasting impact for clients and communities.',
@@ -58,9 +58,9 @@ const fallbackTeam: TeamMember[] = [
   {
     name: 'Prem Upadhyay',
     role: 'Creative Director',
-    roleClassName: 'text-[#9333ea]',
+    roleClassName: 'text-[#E53D00]',
     image: '/images/about/team-member-3.jpg',
-    frameClassName: 'bg-[#84cc16]',
+    frameClassName: 'bg-[#FFE900]',
     bio: 'Brings a user-first mindset to every engagement, with a focus on visual storytelling and clarity across digital touchpoints.',
     linkedin: 'https://www.linkedin.com/company/tsrlab/',
     dribbble: '#',
@@ -130,7 +130,7 @@ export default function TeamSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#111827]">Meet Our Team</h2>
+          <h2 className="heading-section">Meet Our Team</h2>
           <p className="text-sm md:text-base lg:text-lg text-[#6b7280] leading-relaxed">
             A diverse team of designers, developers, AI specialists, and product strategists passionate about
             building exceptional mobile experiences.
@@ -180,7 +180,7 @@ export default function TeamSection() {
                   {member.email && (
                     <a
                       href={`mailto:${member.email}`}
-                      className="hover:text-[#ff3333] transition-colors break-all"
+                      className="hover:text-[#E53D00] transition-colors break-all"
                     >
                       {member.email}
                     </a>
@@ -188,7 +188,7 @@ export default function TeamSection() {
                   {member.phone && (
                     <a
                       href={`tel:${member.phone.replace(/\s/g, '')}`}
-                      className="hover:text-[#ff3333] transition-colors"
+                      className="hover:text-[#E53D00] transition-colors"
                     >
                       {formatPhoneDisplay(member.phone)}
                     </a>
@@ -201,7 +201,7 @@ export default function TeamSection() {
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#ff3333] transition-colors"
+                  className="hover:text-[#E53D00] transition-colors"
                   aria-label={`${member.name} on LinkedIn`}
                 >
                   <LinkedInIcon className="w-5 h-5" style={{ color: 'currentColor' }} />
@@ -211,7 +211,7 @@ export default function TeamSection() {
                     href={member.x}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#ff3333] transition-colors"
+                    className="hover:text-[#E53D00] transition-colors"
                     aria-label={`${member.name} on X`}
                   >
                     <TwitterIcon className="w-5 h-5" style={{ color: 'currentColor' }} />
@@ -220,7 +220,7 @@ export default function TeamSection() {
                 {member.dribbble ? (
                   <a
                     href={member.dribbble}
-                    className="hover:text-[#ff3333] transition-colors"
+                    className="hover:text-[#E53D00] transition-colors"
                     aria-label={`${member.name} on Dribbble`}
                   >
                     <Dribbble className="w-5 h-5" strokeWidth={1.75} />

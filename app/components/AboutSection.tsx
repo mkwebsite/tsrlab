@@ -29,7 +29,7 @@ export default function AboutSection() {
 
           {/* Right Content */}
           <div className={`flex flex-col space-y-8 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e2345]">
+            <h2 className="heading-section">
               Join our upcoming AI Workshop
             </h2>
 
@@ -49,7 +49,7 @@ export default function AboutSection() {
                   'Design AI-enabled research workflows',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff3333] shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E53D00] shrink-0 mt-2" />
                     <span>{item}</span>
                   </li>
                 ))}

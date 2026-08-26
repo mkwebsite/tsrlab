@@ -12,7 +12,7 @@ export default function WhoWeAreSection() {
           <div className="space-y-6 md:space-y-8">
             {/* Header */}
             <div className="space-y-3 md:space-y-4">
-              <p className="text-xs md:text-sm font-semibold tracking-wider uppercase text-[#ff3333]">
+              <p className="text-xs md:text-sm font-semibold tracking-wider uppercase text-[#E53D00]">
                 Who We Are
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
@@ -81,7 +81,7 @@ export default function WhoWeAreSection() {
             <div 
               className="absolute -right-8 md:-right-12 top-12 md:top-20 w-20 h-20 md:w-24 md:h-24 rounded-full"
               style={{
-                backgroundColor: '#ffedd5',
+                backgroundColor: '#FFD4C2',
                 filter: 'blur(40px)',
               }}
             />

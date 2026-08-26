@@ -78,10 +78,10 @@ export default function TestimonialsSection() {
       <div className="container-custom">
         {/* Header */}
         <div className={`text-center space-y-4 md:space-y-5 mb-12 md:mb-16 lg:mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-xs font-bold tracking-[0.15em] text-[#ff3333] uppercase">
+          <p className="text-xs font-bold tracking-[0.15em] text-[#E53D00] uppercase">
             Testimonials
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#111827]">
+          <h2 className="heading-section">
             What Our Clients Say
           </h2>
         </div>
@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="relative">
-                <QuoteIcon className="absolute -top-2 -right-2 w-6 h-5 md:w-8 md:h-6" style={{ color: '#ffedd5' }} />
+                <QuoteIcon className="absolute -top-2 -right-2 w-6 h-5 md:w-8 md:h-6" style={{ color: '#FFD4C2' }} />
                 <p className="text-sm md:text-base lg:text-lg text-[#4b5563] leading-relaxed">
                   {testimonial.quote}
                 </p>

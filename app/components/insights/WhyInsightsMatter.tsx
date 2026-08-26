@@ -15,7 +15,7 @@ export default function WhyInsightsMatter() {
       <div className="grid md:grid-cols-3 gap-8">
         {/* Data-Driven Analysis */}
         <div className="space-y-4">
-          <PieChartIcon className="w-5 h-5" style={{ color: '#ff3333' }} />
+          <PieChartIcon className="w-5 h-5" style={{ color: '#E53D00' }} />
           <div className="space-y-2">
             <h3 className="text-base font-bold text-gray-900">
               Data-Driven Analysis
@@ -29,7 +29,7 @@ export default function WhyInsightsMatter() {
 
         {/* Expert Perspectives */}
         <div className="space-y-4">
-          <UserExpertIcon className="w-4.5 h-5" style={{ color: '#ff3333' }} />
+          <UserExpertIcon className="w-4.5 h-5" style={{ color: '#E53D00' }} />
           <div className="space-y-2">
             <h3 className="text-base font-bold text-gray-900">
               Expert Perspectives
@@ -43,7 +43,7 @@ export default function WhyInsightsMatter() {
 
         {/* Actionable Strategies */}
         <div className="space-y-4">
-          <RocketIcon className="w-5 h-5" style={{ color: '#ff3333' }} />
+          <RocketIcon className="w-5 h-5" style={{ color: '#E53D00' }} />
           <div className="space-y-2">
             <h3 className="text-base font-bold text-gray-900">
               Actionable Strategies

@@ -69,7 +69,7 @@ export default function ServicesSection() {
       <div className="container-custom">
         {/* Header */}
         <div className={`text-center space-y-4 md:space-y-5 mb-12 md:mb-16 lg:mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e2345]">
+          <h2 className="heading-section">
             Ways We Help Clients
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-[#4b5563] max-w-3xl mx-auto px-4">
@@ -86,9 +86,9 @@ export default function ServicesSection() {
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="mb-6 md:mb-8">
-                <service.icon className="w-5 h-5" style={{ color: '#ff3333' }} />
+                <service.icon className="w-5 h-5" style={{ color: '#E53D00' }} />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#1e2345] mb-3 md:mb-4">
+              <h3 className="text-lg md:text-xl font-bold text-[#046865] mb-3 md:mb-4">
                 {service.title}
               </h3>
               <p className="text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
@@ -102,7 +102,7 @@ export default function ServicesSection() {
         <div className={`flex justify-center mt-12 md:mt-16 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <a 
             href="/research-services"
-            className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-3.5 bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white rounded-full font-semibold text-sm md:text-base shadow-lg shadow-[#ff3333]/30 hover:shadow-xl hover:shadow-[#ff3333]/40 hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-3.5 bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white rounded-full font-semibold text-sm md:text-base shadow-lg shadow-[#046865]/30 hover:shadow-xl hover:shadow-[#21A0A0]/40 hover:scale-105 transition-all duration-300"
           >
             View More Services
             <ArrowRightIcon className="w-3.5 h-3.5" style={{ color: '#ffffff' }} />

@@ -17,7 +17,7 @@ export default function ResearchCTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button 
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white px-8 py-3.5 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white px-8 py-3.5 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all hover:scale-105"
               style={{
                 boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.10), 0px 10px 15px rgba(0, 0, 0, 0.10)',
               }}
@@ -27,7 +27,7 @@ export default function ResearchCTA() {
             </button>
 
             <button 
-              className="inline-flex items-center gap-2 bg-transparent border-2 border-[#ff3333] text-[#ff3333] px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-[#ff3333] hover:text-white transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-transparent border-2 border-[#E53D00] text-[#E53D00] px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-[#E53D00] hover:text-white transition-all hover:scale-105"
             >
               View All Services
               <ArrowRightIcon className="w-3.5 h-3" style={{ color: 'currentColor' }} />

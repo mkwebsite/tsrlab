@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       subject: `Contact Form: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #ff3333; border-bottom: 2px solid #ff3333; padding-bottom: 10px;">
+          <h2 style="color: #E53D00; border-bottom: 2px solid #E53D00; padding-bottom: 10px;">
             New Contact Form Submission
           </h2>
           <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin-top: 20px;">
@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
         subject: 'Thank you for contacting TSR Lab',
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #ff3333;">Thank you for contacting us!</h2>
+            <h2 style="color: #E53D00;">Thank you for contacting us!</h2>
             <p>Dear ${name},</p>
             <p>We have received your message and will get back to you as soon as possible.</p>
             <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">

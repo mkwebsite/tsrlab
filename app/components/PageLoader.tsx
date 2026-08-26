@@ -19,7 +19,7 @@ export default function PageLoader() {
 
   return (
     <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-white transition-opacity duration-500"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#FCFFF7] transition-opacity duration-500"
       style={{ opacity: isLoading ? 1 : 0, pointerEvents: isLoading ? 'auto' : 'none' }}
     >
       <div className="flex flex-col items-center gap-6">
@@ -37,7 +37,7 @@ export default function PageLoader() {
         {/* Loading spinner */}
         <div className="relative w-16 h-16">
           <div className="absolute inset-0 border-4 border-gray-200 rounded-full" />
-          <div className="absolute inset-0 border-4 border-transparent border-t-[#ff3333] rounded-full animate-spin" />
+          <div className="absolute inset-0 border-4 border-transparent border-t-[#E53D00] rounded-full animate-spin" />
         </div>
 
         {/* Loading text */}

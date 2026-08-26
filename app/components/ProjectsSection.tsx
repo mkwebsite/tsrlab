@@ -84,10 +84,10 @@ export default function ProjectsSection() {
       <div className="container-custom">
         {/* Header */}
         <div className={`mb-16 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e2345] mb-4">
+          <h2 className="heading-section mb-4">
             Our Recent Engagements
           </h2>
-          <p className="text-base md:text-lg text-[#1e2345]/70 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-[#046865]/70 max-w-3xl mx-auto">
             A snapshot of our recent research and advisory works for startups, sustainability organization, consumer delivery company and others
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Hover Border Effect */}
-              <div className={`absolute inset-0 border-2 border-[#ff3333] rounded-2xl transition-opacity duration-300 ${hoveredId === project._id ? 'opacity-100' : 'opacity-0'}`} />
+              <div className={`absolute inset-0 border-2 border-[#E53D00] rounded-2xl transition-opacity duration-300 ${hoveredId === project._id ? 'opacity-100' : 'opacity-0'}`} />
             </div>
           ))}
         </div>

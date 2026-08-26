@@ -18,8 +18,8 @@ export default function Button({
   const baseStyles = 'inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 whitespace-nowrap';
   
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white shadow-lg shadow-[#ff3333]/30 hover:shadow-xl hover:shadow-[#ff3333]/40 hover:scale-105 w-full sm:w-auto',
-    secondary: 'bg-transparent text-[#1f2937] hover:text-[#ff3333] hover:scale-105 w-full sm:w-auto',
+    primary: 'bg-gradient-to-r from-[#046865] to-[#21A0A0] text-white shadow-lg shadow-[#046865]/30 hover:shadow-xl hover:shadow-[#21A0A0]/40 hover:scale-105 w-full sm:w-auto',
+    secondary: 'bg-transparent text-[#046865] hover:text-[#E53D00] hover:scale-105 w-full sm:w-auto',
   };
 
   return (
