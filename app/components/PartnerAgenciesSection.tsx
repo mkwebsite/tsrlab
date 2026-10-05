@@ -1,9 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const partners: { name: string; logo: string; url?: string }[] = [
+type Partner = {
+  name: string;
+  logo: string;
+  url?: string;
+};
+
+const fallbackPartners: Partner[] = [
   {
     name: 'Electro AI Lab',
     logo: '/images/partners/electro-ai-lab.png',
@@ -20,7 +26,18 @@ const partners: { name: string; logo: string; url?: string }[] = [
   { name: 'Grokking', logo: '/images/partners/grokking.png', url: 'https://www.grokking.in' },
 ];
 
-function PartnerCard({ partner }: { partner: (typeof partners)[number] }) {
+function resolveLogoUrl(value: string, apiBase?: string) {
+  const raw = (value || '').trim();
+  if (!raw) return '';
+  if (/^https?:\/\//i.test(raw)) return raw;
+  if (raw.startsWith('/images/')) return raw;
+  if (!apiBase) return raw.startsWith('/') ? raw : `/${raw}`;
+  const base = apiBase.replace(/\/+$/, '');
+  const path = raw.startsWith('/') ? raw : `/${raw}`;
+  return `${base}${path}`;
+}
+
+function PartnerCard({ partner }: { partner: Partner }) {
   const logo = (
     <Image
       src={partner.logo}
@@ -57,6 +74,41 @@ function PartnerCard({ partner }: { partner: (typeof partners)[number] }) {
 
 export default function PartnerAgenciesSection() {
   const [isPaused, setIsPaused] = useState(false);
+  const [partners, setPartners] = useState<Partner[]>(fallbackPartners);
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
+
+  useEffect(() => {
+    const load = async () => {
+      if (!apiBase) return;
+      try {
+        const response = await fetch(`${apiBase}/app/trusted-partners`, { cache: 'no-store' });
+        if (!response.ok) return;
+        const json = await response.json();
+        const list = Array.isArray(json?.data)
+          ? json.data
+          : Array.isArray(json?.data?.data)
+            ? json.data.data
+            : Array.isArray(json)
+              ? json
+              : [];
+        setPartners(
+          list
+            .filter((item: Partner) => item?.name && item?.logo)
+            .map((item: Partner) => ({
+              name: item.name,
+              logo: resolveLogoUrl(item.logo, apiBase),
+              url: item.url?.trim() || undefined,
+            })),
+        );
+      } catch {
+        // keep fallback partners
+      }
+    };
+    load();
+  }, [apiBase]);
+
+  if (partners.length === 0) return null;
+
   const loopPartners = [...partners, ...partners];
 
   return (
