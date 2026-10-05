@@ -21,9 +21,12 @@ const apiUrl =
 const port = Number(process.env.PORT) || 3202;
 
 /**
+ * Preferred deploy flow:
+ *   npm run build:dist
+ *   cd dist && pm2 start ecosystem.config.js
+ *
  * Deploy checklist (images 404 / broken in production):
- * - Run `npm run build` from this folder (tsrlab/) so `.next` matches the current code.
- * - Keep the whole app on the server: `public/`, `.next/`, `node_modules/`, `package.json` (not only `.next`).
+ * - Keep the whole package: `public/`, `.next/`, `node_modules/`, `package.json`, `.env`
  * - `next start` serves `/images/*` from `./public`; missing `public` = broken logo and static assets.
  * - If using Nginx, proxy all paths to Node (do not `alias` /images to an empty server directory).
  *
